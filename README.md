@@ -3,7 +3,7 @@ Modified Archiso with Calamares installer for LainOS ISO build; uses linux kerne
 
 To use, clone this repository, cd into it, and execute the following command to create the ISO:
 
-`sudo mkarchiso -v -w /home/USER/work -o /home/lain/out /home/USER/lainos-iso/lainos-iso`
+`sudo mkarchiso -v -w /home/USER/work -o /home/lain/out /home/USER/lainos-iso/`
 
 The ISO will appear in /home/out/ and the /home/work/ folder can be deleted.
 
