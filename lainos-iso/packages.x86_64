@@ -26,6 +26,7 @@ ddrescue
 dhclient
 dhcpcd
 diffutils
+discord
 dmidecode
 dmraid
 dnsmasq
@@ -62,6 +63,7 @@ hdparm
 hyperv
 hyprland
 intel-ucode
+amd-ucode
 irssi
 iw
 iwd
@@ -75,7 +77,6 @@ libfido2
 libsigc++-3.0
 libreoffice-fresh
 libusb-compat
-linux
 linux-zen
 linux-zen-headers
 linux-atm
@@ -92,6 +93,7 @@ man-db
 man-pages
 mc
 mdadm
+meld
 memtest86+
 memtest86+-efi
 mkinitcpio
@@ -159,15 +161,21 @@ usbmuxd
 usbutils
 variety
 vim
+virtualbox
 virtualbox-guest-utils-nox
 vlc
 vpnc
 waybar
+wayland
+wayland-utils
 wezterm-terminfo
 wireless-regdb
 wireless_tools
 wpa_supplicant
 wvdial
+xcb-util
+xfce4
+xfce4-goodies
 xfsprogs
 xl2tpd
 xorg-server
@@ -175,6 +183,7 @@ xorg-xinit
 xorg-apps
 xorg-twm
 xorg-xrandr
+xorg-xwayland
 xterm
 zsh
 mkinitcpio-openswap
