@@ -1,5 +1,5 @@
 # lainos-iso
-Modified Archiso with Calamares installer for LainOS ISO build.
+Modified Archiso with Calamares installer for LainOS ISO build; uses linux kernel 6.6.1-zen1-1.
 
 To use, clone this repository, cd into it, and execute the following command to create the ISO:
 
