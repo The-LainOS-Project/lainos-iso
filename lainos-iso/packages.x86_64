@@ -61,7 +61,6 @@ gtkmm-4.0
 gufw
 hdparm
 hyperv
-hyprland
 intel-ucode
 amd-ucode
 irssi
@@ -103,6 +102,7 @@ modemmanager
 mpv
 mtools
 nano
+neofetch
 neovim
 nbd
 networkmanager
@@ -115,7 +115,6 @@ ntfs-3g
 nvme-cli
 open-iscsi
 open-vm-tools
-openbox
 openconnect
 openpgp-card-tools
 openssh

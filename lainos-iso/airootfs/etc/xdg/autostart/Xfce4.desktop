@@ -1,0 +1,15 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=xfce4
+GenericName=xfce4
+Keywords=xfce4;system;installer;
+TryExec=xfce4
+Exec=sh -c "pkexec xfce4"
+Comment=xfce4
+Icon=xfce
+Terminal=false
+StartupNotify=true
+Categories=Qt;System;
+X-AppStream-Ignore=true
+
