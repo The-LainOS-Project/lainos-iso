@@ -7,4 +7,4 @@ To use, clone this repository, cd into it, and execute the following command to 
 
 The ISO will appear in /home/out/ and the /home/work/ folder can be deleted.
 
-Afer booting up the ISO, press enter at the login screen to enter the xfce live installation environment. 
+Afer booting up the ISO, select xfce session then press enter at the login screen to enter the xfce live installation environment. 
