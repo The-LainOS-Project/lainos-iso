@@ -1,9 +1,9 @@
 # lainos-iso
 Modified Archiso with Calamares installer for LainOS ISO build; uses linux kernel 6.6.1-zen1-1.
 
-Prerequisites: have the lainos-calamares-config package (https://github.com/The-LainOS-Project/lainos-calamares-config) in a local repo and adjust pacman.conf accordingly by replacing my local repo with yours.
+Prerequisites: Have the lainos_repo (https://github.com/The-LainOS-Project/lainos_repo) in a local repo and adjust /lainos-iso/pacman.conf accordingly to use this repo.
 
-To use, clone this repository, cd into it, and execute the following command to create the ISO:
+To build this ISO, clone this repository, cd into it, and execute the following command to create the ISO:
 
 `sudo mkarchiso -v -w /home/USER/work -o /home/lain/out /home/USER/lainos-iso/`
 
