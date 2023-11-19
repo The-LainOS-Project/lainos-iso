@@ -7,8 +7,8 @@ To build this ISO, clone this repository, cd into it, and execute the following 
 
 `sudo mkarchiso -v -w /home/USER/work -o /home/lain/out /home/USER/lainos-iso/`
 
-The ISO will appear in /home/out/ and the /home/work/ folder can be deleted.
+The ISO will appear in `/home/out/` and the `/home/work/` folder can be deleted.
 
 Afer booting up the ISO, select xfce session, then enter no password at the login screen to enter the xfce live installation environment.
 
-Small issue, need to add systemd-resolved service for DNS, but the iso boots, installs the system using Calamares, and removes XFCE when finished. Execute `systmctl start systemd-resolved` until I add the DNS service.
+Small issue, need to add systemd-resolved service for DNS, but the iso boots, installs the system using Calamares along with hyprland and openbox, and removes XFCE when finished. Execute `systmctl start systemd-resolved` to add DNS resolution for the time being. Or fix it for me.
