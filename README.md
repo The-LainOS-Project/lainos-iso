@@ -11,4 +11,4 @@ The ISO will appear in /home/out/ and the /home/work/ folder can be deleted.
 
 Afer booting up the ISO, select xfce session, then enter no password at the login screen to enter the xfce live installation environment.
 
-Issues: Live Xfce session does not connect to internet even with wifi or ethernet cable connected. "airootfs.sfs does not exist" error when trying to install.
+Small issue, need to add systemd-resolved service for DNS, but the iso boots, installs the system using Calamares, and removes XFCE when finished. Execute `systmctl start systemd-resolved` until I add the DNS service.
