@@ -110,6 +110,7 @@ network-manager-applet
 ndisc6
 nfs-utils
 nilfs-utils
+nitrogen
 nmap
 ntfs-3g
 nvme-cli
@@ -160,7 +161,6 @@ usbmuxd
 usbutils
 variety
 vim
-virtualbox
 virtualbox-guest-utils-nox
 vlc
 vpnc
@@ -187,5 +187,8 @@ xterm
 zsh
 mkinitcpio-openswap
 ckbcomp
+arandr
+libxrandr
+lxrandr
 
 
