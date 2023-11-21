@@ -1,0 +1,67 @@
+{
+    // General Settings
+
+    // Position TOP
+    "layer": "top",
+    "margin-top": 5,
+    "margin-bottom": 0,
+
+    // Position BOTTOM
+    // "position": "bottom",
+    // "margin-top": 0,
+    // "margin-bottom": 5,
+    
+    "layer": "top",
+    "height": 50,
+    "margin-left": 0,
+    "margin-right": 0,    
+    "spacing": 0,
+
+    // Load Modules
+    "include": ["~/.config/waybar/modules.json"],
+
+    // Modules Left
+    "modules-left": [
+        "custom/appmenu",
+        "hyprland/workspaces",
+        //"group/quicklinks",
+        "wlr/taskbar"
+        //"hyprland/window" // titlebar
+    ],
+
+    // Modules Center
+    "modules-center": [
+        "clock"
+    ],
+
+    // Modules Right    
+    "modules-right": [
+        //"custom/updates",
+        "pulseaudio",
+        //"bluetooth",
+        //"battery", 
+        //"group/hardware",
+	"tray",
+        "custom/exit" // xlogout
+        //"network",
+    ],
+
+    // Group Quicklinks
+    "group/quicklinks": {
+        "orientation": "horizontal",
+        "modules": [
+            "custom/filemanager",
+            "custom/librewolf",
+         ]
+    },
+
+    // Group Hardware
+    "group/hardware": {
+        "orientation": "horizontal",
+        "modules": [
+            "disk",
+            "cpu",
+            "memory"
+        ]
+    }
+}

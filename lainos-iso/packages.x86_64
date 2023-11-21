@@ -1,5 +1,6 @@
 alsa-utils
 amd-ucode
+archiso-calamares-config
 arch-install-scripts
 archinstall
 b43-fwcutter
@@ -69,7 +70,7 @@ iwd
 jfsutils
 keepass
 kitty-terminfo
-lainos-calamares-config
+#lainos-calamares-config
 less
 lftp
 libfido2
@@ -185,10 +186,8 @@ xorg-xrandr
 xorg-xwayland
 xterm
 zsh
-mkinitcpio-openswap
-ckbcomp
-arandr
-libxrandr
-lxrandr
+#mkinitcpio-openswap
+#ckbcomp
+
 
 

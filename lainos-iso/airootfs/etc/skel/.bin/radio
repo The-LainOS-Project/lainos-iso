@@ -1,0 +1,14 @@
+#!/bin/sh
+
+# Run mpv in the background to play the audio
+mpv --input-terminal=yes --really-quiet \
+	https://lain.radio/listen/lain.radio/radio.mp3 &
+
+# You can use 'p' to pause, 'm' to mute and 'q' to quit mpv
+# but unfortunately 'q' doesn't stop chafa
+# The only reliable way to stop both is using `Ctrl + C`
+# Don't waste your time trying PID or SIGCHILD, I did =(
+
+# Display the animated GIF using chafa, (if it's installed)
+[ -x "$(command -v chafa)" ] &&
+	chafa /usr/share/LainOS/lain.gif
