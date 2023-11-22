@@ -1,0 +1,66 @@
+!-----------------------------------
+! Configuration intended for urxvt
+!-----------------------------------
+
+!--- Window Settings
+
+Xcursor.size:		10
+*.buffered:             true
+*.geometry:             90x30
+
+URxvt.scrollBar:	false
+URxvt.saveLines:	65535
+
+!--- Font
+
+URxvt.font:		xft:MesloLGS NF:pixelsize=12:antialias=true:hinting=true
+URxvt.boldFont:		xft:MesloLGS NF:bold:pixelsize=12:antialias=true:hinting=true
+URxvt.italicFont:	xft:MesloLGS NF:italic:pixelsize=12:antialias=true:hinting=true
+URxvt.boldItalicFont:	xft:MesloLGS NF:bold:italic:pixelsize=12:antialias=true:hinting=true
+
+!--- Set transparency & background shading
+
+*.depth:		32
+*.background: 		rgba:0000/0505/1515/dddd
+*.shading:		1
+*.highlightColor:	#000720
+
+!--- Colorscheme
+
+! special
+*.foreground:   #dddce7
+*.cursorColor:  #dddce7
+
+! black
+!*.color0:       #0e1013
+*.color0:       #000515
+*.color8:       #454b56
+
+! red
+*.color1:       #d40000
+*.color9:       #c0392b
+
+! green
+*.color2:       #007900
+*.color10:      #218058
+
+! yellow
+*.color3:       #ff4500
+*.color11:      #fdbc4b
+
+! blue
+*.color4:       #005f87
+*.color12:      #2980b9
+
+! magenta
+*.color5:       #8b09b1
+*.color13:      #8e44ad
+
+! cyan
+*.color6:       #20786d
+*.color14:      #27aeae
+
+! white
+*.color7:       #dddce7
+*.color15:      #acada1
+

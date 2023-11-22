@@ -1,0 +1,213 @@
+{
+	"hyprland/workspaces": {
+		"disable-scroll": true,
+		"on-click": "activate",
+		"active-only": false,
+		"all-outputs": false,
+		"format": "{icon}",
+		"format-icons": {
+			"1": "一",
+			"2": "二",
+			"3": "三",
+			"4": "四",
+			"5": "五",
+			"6": "六",
+			"7": "七",
+			"8": "八",
+			"9": "九",
+			"10": "十",
+			"urgent": "",
+			"active": "",
+			"default": ""
+		},
+		"persistent_workspaces": {
+			"*": 10
+		}
+	},
+	"wlr/taskbar": {
+		"format": "{icon}",
+		"icon-size": 18,
+		"tooltip-format": "{title}",
+		"on-click": "activate",
+		"on-click-middle": "close",
+		"ignore-list": [],
+		"app_ids-mapping": {
+			"firefoxdeveloperedition": "firefox-developer-edition"
+		},
+		"rewrite": {
+			"Firefox Web Browser": "Firefox",
+			"Foot Server": "Terminal"
+		}
+	},
+	"hyprland/window": {
+		"rewrite": {
+			"(.*) - Brave": "$1",
+			"(.*) - Chromium": "$1",
+			"(.*) - Brave Search": "$1",
+			"(.*) - Outlook": "$1",
+			"(.*) Microsoft Teams": "$1"
+		},
+		"separate-outputs": true
+	},
+	"custom/youtube": {
+		"format": " {}",
+		"exec": "python ~/private/youtube.py",
+		"restart-interval": 600,
+		"on-click": "brave https://studio.youtube.com",
+		"tooltip": false
+	},
+	"custom/updates": {
+		"format": "  {}",
+		"tooltip-format": "{}",
+		"escape": true,
+		"return-type": "json",
+		"exec": "~/dotfiles/scripts/updates.sh",
+		"restart-interval": 60,
+		"on-click": "alacritty -e ~/dotfiles/scripts/installupdates.sh",
+		"tooltip": false
+	},
+	"custom/filemanager": {
+		"format": "",
+		"on-click": "exo-open --launch FileManager",
+		"tooltip": false
+	},
+	"custom/outlook": {
+		"format": "",
+		"on-click": "brave --app=https://outlook.office.com/mail/",
+		"tooltip": false
+	},
+	"custom/teams": {
+		"format": "",
+		"on-click": "chromium --app=https://teams.microsoft.com/go",
+		"tooltip": false
+	},
+	"custom/firefox": {
+		"format": "󰈹 ",
+		"on-click": "firefox",
+		"tooltip": false
+	},
+	"custom/librewolf": {
+		"format": "󰈹 ",
+		"on-click": "librewolf",
+		"tooltip": false
+	},
+	"custom/chatgpt": {
+		"format": "",
+		"on-click": "brave --app=https://chat.openai.com",
+		"tooltip": false
+	},
+	"custom/calculator": {
+		"format": "",
+		"on-click": "~/dotfiles/scripts/calculator.sh",
+		"tooltip": false
+	},
+	"custom/windowsvm": {
+		"format": "",
+		"on-click": "~/private/launchvm.sh",
+		"tooltip": false
+	},
+	"custom/appmenu": {
+		"format": " ",
+		"on-click": "rofi -show drun",
+		"tooltip": false
+	},
+	"custom/exit": {
+		"format": "",
+		"on-click": "wlogout",
+		"tooltip": false
+	},
+	"keyboard-state": {
+		"numlock": true,
+		"capslock": true,
+		"format": "{name} {icon}",
+		"format-icons": {
+			"locked": "",
+			"unlocked": ""
+		}
+	},
+	"tray": {
+		"icon-size": 20,
+		"spacing": 10
+	},
+	"clock": {
+		"timezone": "America/Mexico_City",
+		"tooltip-format": "<tt><big>{calendar}</big></tt>",
+		"format-alt": "{:%Y-%m-%d}"
+	},
+	"cpu": {
+		"format": "/ C {usage}% "
+	},
+	"memory": {
+		"format": "/ M {}% "
+	},
+	"disk": {
+		"interval": 30,
+		"format": "   {percentage_used}% ",
+		"path": "/"
+	},
+	"network": {
+		"format": "{ifname}",
+		"format-wifi": "   {signalStrength}%",
+		"format-ethernet": "  {ipaddr}",
+		"format-disconnected": "", //An empty format will hide the module.
+		"tooltip-format": " {ifname} via {gwaddri}",
+		"tooltip-format-wifi": "   {essid} ({signalStrength}%)",
+		"tooltip-format-ethernet": "  {ifname} ({ipaddr}/{cidr})",
+		"tooltip-format-disconnected": "Disconnected",
+		"max-length": 50
+	},
+	"battery": {
+		"states": {
+			// "good": 95,
+			"warning": 30,
+			"critical": 15
+		},
+		"format": "{icon}   {capacity}%",
+		"format-charging": "  {capacity}%",
+		"format-plugged": "  {capacity}%",
+		"format-alt": "{icon}  {time}",
+		// "format-good": "", // An empty format will hide the module
+		// "format-full": "",
+		"format-icons": [
+			" ",
+			" ",
+			" ",
+			" ",
+			" "
+		]
+	},
+	"pulseaudio": {
+		// "scroll-step": 1, // %, can be a float
+		"format": "{icon} {volume}%",
+		"format-bluetooth": "{volume}% {icon} {format_source}",
+		"format-bluetooth-muted": " {icon} {format_source}",
+		"format-muted": " {format_source}",
+		"format-source": "{volume}% ",
+		"format-source-muted": "",
+		"format-icons": {
+			"headphone": "",
+			"hands-free": "",
+			"headset": "",
+			"phone": "",
+			"portable": "",
+			"car": "",
+			"default": [
+				"",
+				" ",
+				" "
+			]
+		},
+		"on-click": "pavucontrol"
+	},
+	"bluetooth": {
+		"format-disabled": "",
+		"format-off": "",
+		"interval": 30,
+		"on-click": "blueman-manager"
+	},
+	"user": {
+		"format": "{user}",
+		"interval": 60,
+		"icon": false
+	}
+}

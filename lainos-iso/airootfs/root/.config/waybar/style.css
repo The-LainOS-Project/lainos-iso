@@ -1,0 +1,368 @@
+/* -----------------------------------------------------
+ * Import Pywal colors 
+ * ----------------------------------------------------- */
+/* @import '../../.cache/wal/colors-waybar.css'; */
+
+/* -----------------------------------------------------
+ * General 
+ * ----------------------------------------------------- */
+
+* {
+    font-family: "Hack", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    border: none;
+    border-radius: 12px;
+}
+
+window#waybar {
+    background-color: rgba(0,0,0,0.8);
+    border-bottom: 0px solid #ffffff;
+    /* color: #ECDBEE; */
+    background: transparent;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+/* -----------------------------------------------------
+ * Workspaces 
+ * ----------------------------------------------------- */
+
+#workspaces {
+    background: #0B0A10;
+    margin: 5px 5px 5px 5px;
+    padding: 4px 1px;
+    border-radius: 12px;
+    font-weight: bold;
+    font-style: normal;
+    opacity:0.75;
+}
+
+#workspaces button {
+    padding: 0px 10px;
+    margin: 0px 3px;
+    border-radius: 12px;
+    color: #0088AA;
+    transition: all 0.3s ease-in-out;
+    opacity:0.75;
+    font-size:13px;
+}
+
+/* -----------------------------------------------------
+ * Tooltips
+ * ----------------------------------------------------- */
+
+tooltip {
+    border-radius: 10px;
+    background-color: #0B0A10;
+    opacity:0.75;
+    padding:20px;
+    margin:0px;
+}
+
+tooltip label {
+    color: #ECDBEE;
+}
+
+/* -----------------------------------------------------
+ * Window
+ * ----------------------------------------------------- */
+
+#window {
+    background: #ECDBEE;
+    margin: 5px 15px 5px 0px;
+    padding: 2px 10px 0px 10px;
+    border-radius: 12px;
+    color:@background;
+    font-size:16px;
+    font-weight:normal;
+    opacity:0.75;
+}
+
+window#waybar.empty #window {
+    background-color:transparent;
+}
+
+/* -----------------------------------------------------
+ * Taskbar
+ * ----------------------------------------------------- */
+
+#taskbar {
+    background: #0B0A10;
+    color: #ECDBEE;
+    margin: 3px 15px 3px 0px;
+    padding: 2px 3px 1px 3px;
+    border-radius: 14px;
+    font-weight: normal;
+    font-style: normal;
+    opacity:0.75;
+    border: 3px solid #0B0A10;
+}
+
+#taskbar button {
+    margin:0;
+    padding: 0px 5px 0px 5px;
+}
+
+/* -----------------------------------------------------
+ * Modules
+ * ----------------------------------------------------- */
+
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 0;
+}
+
+.modules-right > widget:last-child > #workspaces {
+    margin-right: 0;
+}
+
+/* -----------------------------------------------------
+ * Custom Quicklinks
+ * ----------------------------------------------------- */
+
+#custom-librewolf, #custom-firefox, #custom-outlook, #custom-filemanager, #custom-teams, #custom-chatgpt, #custom-calculator, #custom-windowsvm {
+    color: #0088AA;
+    margin-left:10px;
+    margin-right:10px;
+    font-size:20px;
+    font-weight:bold;
+    opacity:0.75;
+}
+
+/* -----------------------------------------------------
+ * Custom Modules
+ * ----------------------------------------------------- */
+
+#custom-appmenu {
+    background-color: #0B0A10;
+    font-size: 16px;
+    color: #0088AA;
+    border-radius: 12px;
+    padding: 0px 10px 0px 10px;
+    margin: 3px 15px 3px 14px;
+    opacity:0.75;
+    border:2px solid #0B0A10;
+}
+
+/* -----------------------------------------------------
+ * Custom Exit
+ * ----------------------------------------------------- */
+
+#custom-exit {
+    margin: 0px 20px 0px 0px;
+    font-size:20px;
+}
+
+/* -----------------------------------------------------
+ * Custom Updates
+ * ----------------------------------------------------- */
+
+#custom-updates {
+    background-color: #0B0A10;
+    font-size: 16px;
+    color: @background;
+    border-radius: 12px;
+    padding: 2px 10px 0px 10px;
+    margin: 5px 15px 5px 0px;
+    opacity:0.75;
+}
+
+#custom-updates.green {
+    background-color: #0B0A10;
+}
+
+#custom-updates.yellow {
+    background-color: #ff9a3c;
+    color: #ffffff;
+}
+
+#custom-updates.red {
+    background-color: #dc2f2f;
+    color: #ffffff;
+}
+
+/* -----------------------------------------------------
+ * Custom Youtube
+ * ----------------------------------------------------- */
+
+#custom-youtube {
+    background-color: #0B0A10;
+    font-size: 16px;
+    color: @background;
+    border-radius: 12px;
+    padding: 2px 10px 0px 10px;
+    margin: 5px 15px 5px 0px;
+    opacity:0.75;
+}
+
+/* -----------------------------------------------------
+ * Hardware Group
+ * ----------------------------------------------------- */
+
+#disk,#memory,#cpu {
+    margin:0px;
+    padding:0px;
+    font-size:16px;
+}
+
+#memory {
+    margin-right:10px;
+}
+
+/* -----------------------------------------------------
+ * Clock
+ * ----------------------------------------------------- */
+
+#clock {
+    background-color: #0B0A10;
+    font-size: 16px;
+    color: #ECDBEE;
+    border-radius: 12px;
+    padding: 1px 10px 0px 10px;
+    margin: 3px 15px 3px 0px;
+    opacity:0.75;
+    border:3px solid #0B0A10;
+}
+
+/* -----------------------------------------------------
+ * Pulseaudio
+ * ----------------------------------------------------- */
+
+#pulseaudio {
+    background-color: #0B0A10;
+    font-size: 16px;
+    color: @background;
+    border-radius: 12px;
+    padding: 2px 10px 0px 10px;
+    margin: 5px 15px 5px 0px;
+    opacity:0.75;
+}
+
+#pulseaudio.muted {
+    background-color: #253e59;
+    color: #ECDBEE;
+}
+
+/* -----------------------------------------------------
+ * Network
+ * ----------------------------------------------------- */
+
+#network {
+    background-color: #0B0A10;
+    font-size: 16px;
+    color: @background;
+    border-radius: 12px;
+    padding: 2px 10px 0px 10px;
+    margin: 3px 15px 3px 0px;
+    opacity:0.75;
+    border: 3px solid #ECDBEE
+}
+
+#network.ethernet {
+    background-color: #253e59;
+    color:#ECDBEE;
+}
+
+#network.wifi {
+    background-color: #253e59;
+    color:#ECDBEE;
+}
+
+/* -----------------------------------------------------
+ * Bluetooth
+ * ----------------------------------------------------- */
+
+#bluetooth.on, #bluetooth.connected {
+    background-color: #0B0A10;
+    font-size: 16px;
+    color: @background;
+    border-radius: 12px;
+    padding: 2px 10px 0px 10px;
+    margin: 5px 15px 5px 0px;
+    opacity:0.75;
+}
+
+#bluetooth.off {
+    background-color: transparent;
+    padding: 0px;
+    margin: 0px;
+}
+
+/* -----------------------------------------------------
+ * Battery
+ * ----------------------------------------------------- */
+
+#battery {
+    background-color: #0B0A10;
+    font-size: 16px;
+    color: @background;
+    border-radius: 12px;
+    padding: 2px 15px 0px 10px;
+    margin: 5px 15px 5px 0px;
+    opacity:0.75;
+}
+
+#battery.charging, #battery.plugged {
+    color: #ffffff;
+    background-color: #253e59;
+}
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: #0B0A10;
+    }
+}
+
+#battery.critical:not(.charging) {
+    background-color: #f53c3c;
+    color: #ffffff;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+/* -----------------------------------------------------
+ * Tray
+ * ----------------------------------------------------- */
+
+#tray {
+    background: #0B0A10;
+    margin: 3px 15px 3px 0px;
+    padding: 2px 3px 1px 3px;
+    border-radius: 14px;
+    font-weight: normal;
+    font-style: normal;
+    opacity:0.75;
+    border: 3px solid #0B0A10;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: #eb4d4b;
+}
+
+/* -----------------------------------------------------
+ * Other
+ * ----------------------------------------------------- */
+
+label:focus {
+    background-color: #0B0A10;
+}
+
+#backlight {
+    background-color: #90b1b1;
+}
+
+#network {
+    background-color: #2980b9;
+}
+
+#network.disconnected {
+    background-color: #f53c3c;
+}
+
