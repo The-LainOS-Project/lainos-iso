@@ -137,6 +137,7 @@ archiso-calamares-config
 xfce4
 sddm
 hyprland
+networkmanager
 
 #accessories
 chafa
