@@ -35,7 +35,7 @@ gnu-netcat
 gpart
 gpm
 gptfdisk
-grml-zsh-config
+#grml-zsh-config
 grub
 hdparm
 hyperv
@@ -45,7 +45,7 @@ iw
 iwd
 jfsutils
 kitty-terminfo
-lesst
+less
 lftp
 libfido2
 libusb-compat
@@ -136,6 +136,7 @@ calamares
 archiso-calamares-config
 xfce4
 sddm
+hyprland
 
 #accessories
 chafa
