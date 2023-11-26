@@ -1,0 +1,8 @@
+[Plymouth Theme]
+Name=LainOS new
+Description=A theme that features a blank background with a logo.
+ModuleName=script
+
+[script]
+ImageDir=/usr/share/plymouth/themes/lainos
+ScriptFile=/usr/share/plymouth/themes/lainos/lainos.script
