@@ -140,17 +140,17 @@ networkmanager
 
 
 #desktop
-hyprland
+hyprland-git
 openbox
 hyprpicker
 wofi
 grimblast-git
-#nwg-look-bin
+nwg-look-bin
 cliphist
 waybar
 swaybg
 dunst
-#eww-wayland
+eww-wayland
 swayidle
 swaylock-effects-git
 #swaylock-git
@@ -161,6 +161,7 @@ light-git
 papirus-icon-theme
 cava
 xdg-desktop-portal-wlr
+#xdg-desktop-portal-hyprland
 grim
 slurp
 wl-clipboard
