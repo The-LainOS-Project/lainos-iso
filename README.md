@@ -1,5 +1,5 @@
 # lainos-iso
-Modified Archiso profile with Calamares installer for LainOS ISO build; uses linux kernel 6.6.2-zen1-1.
+Modified Archiso profile with Calamares installer for LainOS ISO build; uses linux kernel 6.6.4-zen1-1.
 
 This ISO build installs all of the packages found in the LainOS Arch script(https://codeberg.org/LainOS/LainOS-ricer-arch) using Calamares and leaves an installation with Hyprland and Openbox(Xfce is deleted during the installation). This ISO build precedes the final LainOS ISO build as the animated sddm theme, grub theme, and plymouth theme need to be included for completion.
 
