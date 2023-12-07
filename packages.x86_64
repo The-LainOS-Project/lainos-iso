@@ -137,6 +137,7 @@ archiso-calamares-config
 xfce4
 sddm
 networkmanager
+network-manager-applet
 
 
 #desktop
@@ -153,7 +154,6 @@ dunst
 eww-wayland
 swayidle
 swaylock-effects-git
-#swaylock-git
 sway-audio-idle-inhibit-git
 bc
 pamixer
@@ -205,7 +205,7 @@ meld
 neovim
 nix
 onefetch
-#pyenv-virtualenv 1:1.2.2-1 
+#pyenv-virtualenv 
 python-pipx
 shellcheck
 valgrind
