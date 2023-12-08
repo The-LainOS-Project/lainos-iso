@@ -55,6 +55,7 @@ linux-atm
 linux-firmware
 linux-firmware-marvell
 livecd-sounds
+lsb-release
 lsscsi
 lvm2
 lynx

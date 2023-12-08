@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # shellcheck disable=SC2034
 
-iso_name="LainOS"
+iso_name=LainOS
 iso_label="LainOS$(date --date="@${SOURCE_DATE_EPOCH:-$(date +%s)}" +%Y%m)"
 iso_publisher="LainOS <https://lainos.info>"
 iso_application="LainOS Live/Rescue CD"
