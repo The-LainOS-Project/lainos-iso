@@ -12,7 +12,7 @@
     // "margin-bottom": 5,
     
     "layer": "top",
-    "height": 50,
+    "height": 42,
     "margin-left": 0,
     "margin-right": 0,    
     "spacing": 0,
@@ -39,7 +39,7 @@
         //"custom/updates",
         "pulseaudio",
         //"bluetooth",
-        //"battery", 
+        "battery", 
         //"group/hardware",
 	"tray",
         "custom/exit" // xlogout
