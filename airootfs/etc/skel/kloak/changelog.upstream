@@ -1,0 +1,1452 @@
+commit 59056a25d1e14d6d81ee8a9666eda0bc62fe342a
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Tue Aug 15 09:19:43 2023 -0400
+
+    seccomp
+
+commit 167f38528ed47cef87be2cea9ba1fa5b4bbbe2d8
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Tue Aug 15 09:08:18 2023 -0400
+
+    bumped changelog version
+
+commit 07d37f52867816ede568c7fb88bde1ae012359e3
+Merge: fdd0d49 e488037
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Tue Aug 15 09:02:19 2023 -0400
+
+    Merge branch 'chatgpt'
+
+commit fdd0d492bca9e125e95ea787066e266ad404fdc3
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Tue Aug 15 08:19:56 2023 -0400
+
+    bumped changelog version
+
+commit 8e59a85024c4fb4345918d28396e85c85c7abef2
+Merge: 6a5f677 cda8d74
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Tue Aug 15 08:15:19 2023 -0400
+
+    Merge remote-tracking branch 'vmonaco/dev'
+
+commit cda8d74c37227656cc09c1f7324a69b8f908c9cc
+Author: Vinnie Monaco <contact@vmonaco.com>
+Date:   Sun Aug 13 23:00:11 2023 -0700
+
+    one more missing seccomp filter
+
+commit e475b1c9c552643328da48f39bef999a88d6be21
+Merge: 34e9f42 2a3a45b
+Author: Vinnie Monaco <vinmonaco@gmail.com>
+Date:   Sun Aug 13 22:56:56 2023 -0700
+
+    Merge branch 'master' into dev
+
+commit 34e9f421d75ef5e99f71c6d84bb6fb088ac91637
+Author: Vinnie Monaco <contact@vmonaco.com>
+Date:   Sun Aug 13 22:54:12 2023 -0700
+
+    added missing seccomp filters
+
+commit e4880377bf9e3ae638b74c23a8ef92b07c9bad04
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Sun Jul 9 08:27:38 2023 -0400
+
+    apparmor
+
+commit c8178aea02117addfb28dba06e824ece7732dee2
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Sun Jul 9 07:31:42 2023 -0400
+
+    disable broken seccomp SystemCallFilter
+    
+    https://github.com/vmonaco/kloak/pull/38#issuecomment-1627688486
+
+commit 6e13598c6d8d39c1f891e7ed036f1e1e800d5c85
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Sun Jul 9 07:30:48 2023 -0400
+
+    apparmor
+
+commit 2f08794c4b238bb08e0e06a9b10f031f739955be
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Sun Jul 9 07:26:22 2023 -0400
+
+    seccomp
+
+commit 6a5f677a15e34989d4a87382304806e70771c6f0
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Sun Jul 9 06:32:50 2023 -0400
+
+    bumped changelog version
+
+commit d97fc922d1032594768b77fbbc7c2683f54abaa9
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Sun Jul 9 06:13:21 2023 -0400
+
+    readme
+
+commit 1ac67d459855b4d623c4ae6aa4bd183ef7bd84b2
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Sun Jul 9 05:32:55 2023 -0400
+
+    bumped changelog version
+
+commit 2a8b5a6934019598beb8290ac4b214407395c54e
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Sat Jul 8 14:14:05 2023 -0400
+
+    Added a running variable to control the while loop and added a signal handler (handle_signal) to catch the interrupt signal (SIGINT) and terminate the program gracefully.
+    
+    Fixed the command-line argument handling by checking if argc is less than 2 (instead of assuming argc > 1). If no arguments are provided, the program displays the usage message and exits.
+    
+    Updated the ioctl() call to check the return value for errors. If the ioctl() operation fails to get the device name, an error message is printed, and the program exits.
+    
+    Removed the check for root access since it was only printing a message and not affecting the program's execution. If root access is required, it should be checked externally before running the program.
+    
+    Closed the device file descriptor (fd) before exiting the program to release system resources properly.
+
+commit 54f0b3e111a44bb95223200575fe9d19a8c70c09
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Sat Jul 8 14:10:20 2023 -0400
+
+    The rescue_len variable was not initialized, causing undefined behavior. I added the initialization rescue_len = 0 to fix it.
+    
+    In the init_inputs() function, I added error handling for the malloc call to allocate memory for the pfds array.
+    
+    In the emit_event() function, I added error handling for the libevdev_uinput_write_event function call to check if writing the event to uinput was successful.
+
+commit cd31cd4060c97c6dabb4af88a17d9a56c3981931
+Merge: d11ed97 2a3a45b
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Sat Jul 8 13:17:08 2023 -0400
+
+    Merge remote-tracking branch 'vmonaco/master' into dev
+
+commit e28ba0939f1d3fe01e3c141727ec5534c4423b0b
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Sat Jul 8 13:08:00 2023 -0400
+
+    same ordering as upstream
+
+commit 29055528d43cf6d53b459d4e180698fe255c78d2
+Merge: d8e06e8 2a3a45b
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Sat Jul 8 13:03:38 2023 -0400
+
+    Merge remote-tracking branch 'vmonaco/master'
+
+commit d8e06e8e4b8bdff8d4243aa627acbc9233a2b515
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Fri Jul 7 20:08:03 2023 -0400
+
+    bumped changelog version
+
+commit 327df39693b7fa47baf7fde697006e7f649cf796
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Fri Jul 7 20:04:27 2023 -0400
+
+    seccomp
+
+commit fb89c86d206aada6dabb818c3dff1f6b3ac6c1a3
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Wed Jun 21 09:43:23 2023 +0000
+
+    bumped changelog version
+
+commit e1f1f152a406042af0fef3b801b4bd4850c10ae8
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Wed Jun 21 09:11:34 2023 +0000
+
+    bookworm
+
+commit 2a3a45ba429c8ba6e2c8d8560f79efb6cb43fdb3
+Author: Vinnie Monaco <vinmonaco@gmail.com>
+Date:   Sat Jun 17 20:57:22 2023 -0700
+
+    Update README.md
+
+commit e817caef8bdda365838658b232914dfe4c9143d0
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Fri Jun 16 11:28:58 2023 +0000
+
+    bumped changelog version
+
+commit 9bc6515a828f64e10c367169ecdc249f237fb464
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Fri Jun 16 10:49:08 2023 +0000
+
+    readme
+
+commit 8f585808b10b080434bcf74f45dee9e826ec89fa
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Wed Jun 14 10:09:18 2023 +0000
+
+    bumped changelog version
+
+commit 6dbf7832ad67f950fc85fbf12359d318b07652a7
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Wed Jun 14 09:51:12 2023 +0000
+
+    fix lintian warning
+    
+    P: kloak source: very-long-line-length-in-source-file 676 > 512 [README.md:170]
+
+commit 2155a425603c61490458590c5abfe75f3d8aa5cd
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Mon Jun 12 18:15:43 2023 +0000
+
+    bumped changelog version
+
+commit 39194c7ec3e782594cf7715888013502d6a21824
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Mon Jun 12 16:22:35 2023 +0000
+
+    Standards-Version: 4.6.1.0
+
+commit 120234dd3cfe9567eef09c8681b4855119d9dd90
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Mon Jun 12 15:38:28 2023 +0000
+
+    bumped changelog version
+
+commit d8c20cabb38a124ba9e9171c7d897bc2993f0a87
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Mon Jun 12 14:52:04 2023 +0000
+
+    update copyright year
+
+commit 6b2d75e98af072c68981a677bf66320dafca79fc
+Merge: 38eefc5 af2ddc3
+Author: Vinnie Monaco <vinmonaco@gmail.com>
+Date:   Wed Nov 16 21:02:23 2022 -0800
+
+    Merge pull request #44 from GerHobbelt/master
+    
+    README fixes: broken link to paper fixed + 1 language typo
+
+commit af2ddc31b008ac0042b5cfdcc53cce72dec9cbf3
+Author: Ger Hobbelt <ger@hobbelt.com>
+Date:   Tue Nov 15 19:58:29 2022 +0100
+
+    updated link to stylometry techniques paper.
+
+commit 53ada224cd9323916f515d5f791050b18ae20639
+Author: Ger Hobbelt <ger@hobbelt.com>
+Date:   Tue Nov 15 19:57:22 2022 +0100
+
+    language fix in README
+
+commit ad1cb08250b6b052c7232d5d2614606dccb6bd54
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Wed May 25 06:07:59 2022 -0400
+
+    bumped changelog version
+
+commit a7ce4f5d43e7d90f1add743e7bd602b6be3e825b
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Fri May 20 15:27:14 2022 -0400
+
+    readme
+
+commit c2752726f56fefa3a51adb234747d53d21851e42
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Fri May 20 14:46:43 2022 -0400
+
+    copyright
+
+commit 22a0d992b64a9026a6bf01b0e48a8914f34698c6
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Sun Apr 10 12:40:20 2022 -0400
+
+    readme
+
+commit 38eefc52728e31e89646dd61bb15ecbbb49c0871
+Merge: aaf1de4 6cce482
+Author: Vinnie Monaco <vinmonaco@gmail.com>
+Date:   Tue Jan 11 10:37:41 2022 -0800
+
+    Merge pull request #40 from hardcore-sushi/systemd-fix
+    
+    Add some system calls to the systemd whitelist to prevent crashes
+
+commit 6cce4829066bac632e1730b8f379e3c45ac15a02
+Author: Hardcore Sushi <hardcore.sushi@disroot.org>
+Date:   Fri Jan 7 17:24:39 2022 +0100
+
+    Add some system calls to the systemd whitelist to prevent crashes
+
+commit 64aef6d208f37fde04c4f12d84f16c214ed58087
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Tue Nov 9 14:32:31 2021 -0500
+
+    readme
+
+commit d11ed97e3c26318ca96a07806d492597950f36bb
+Author: Vinnie Monaco <contact@vmonaco.com>
+Date:   Tue Sep 28 15:22:59 2021 -0700
+
+    fixed typo
+
+commit edf0a41c9ad05e901d6726804112308dc098965f
+Author: Vinnie Monaco <contact@vmonaco.com>
+Date:   Tue Sep 28 15:21:07 2021 -0700
+
+    fixed apparmor profile: added r to /sys/devices/virtual/input
+
+commit 5870a8d3c79567333fbb720d2ea1af43ceee2aea
+Author: Vinnie Monaco <contact@vmonaco.com>
+Date:   Tue Sep 28 15:15:49 2021 -0700
+
+    fixed apparmor profile: added w to /dev/uinput
+
+commit 1e16893c10fbfcac899fe341cae87022a295e626
+Author: Vinnie Monaco <contact@vmonaco.com>
+Date:   Tue Sep 28 15:14:00 2021 -0700
+
+    fixed apparmor profile: added r to /dev/uinput
+
+commit 2edb4b2bc4c72d6ca457afb4f8265f5ea69e0da9
+Author: Vinnie Monaco <contact@vmonaco.com>
+Date:   Thu Sep 23 16:33:44 2021 -0700
+
+    formatted main.c
+
+commit 1db17e2ac3113cc5253330d5d459fd64dba93164
+Author: Vinnie Monaco <contact@vmonaco.com>
+Date:   Thu Sep 23 16:11:05 2021 -0700
+
+    added pkg-config to build depends
+
+commit c2142bf9eafbc4ed8360e1e8a286fbabc68a74d2
+Author: Vinnie Monaco <contact@vmonaco.com>
+Date:   Thu Sep 23 16:10:00 2021 -0700
+
+    added libsodium init
+
+commit 12f16aac4f8e207a3a23ea9e843e219332a1cd94
+Author: Vinnie Monaco <contact@vmonaco.com>
+Date:   Mon Sep 20 21:32:52 2021 -0700
+
+    typo
+
+commit 4f271826d6c1621ad8e4a85046da12525698e88f
+Author: Vinnie Monaco <contact@vmonaco.com>
+Date:   Mon Sep 20 21:32:07 2021 -0700
+
+    added deb dependencies
+
+commit 5fca94d9e7c27a0b3d9dd8332371987fef6047ec
+Author: Vinnie Monaco <contact@vmonaco.com>
+Date:   Mon Sep 20 11:30:55 2021 -0700
+
+    fixed verbose output format
+
+commit ca5510586597ebd6287afa9c878c2bfc3bbf2b9b
+Author: Vinnie Monaco <contact@vmonaco.com>
+Date:   Mon Sep 20 11:20:52 2021 -0700
+
+    added build flags to makefile
+
+commit ea6f6be0a33f19038b42aff42aacfd09020b3041
+Author: Vinnie Monaco <contact@vmonaco.com>
+Date:   Fri Sep 17 15:27:14 2021 -0700
+
+    use libsodium for prng
+
+commit 5dc5412f78b7111c42818b973a7a25248b5d49ca
+Author: Vinnie Monaco <contact@vmonaco.com>
+Date:   Fri Sep 17 15:02:39 2021 -0700
+
+    added support for multiple input devices
+
+commit 36f83eb631be27e325d9209e956e04f37fbe470c
+Merge: 59c47d8 aaf1de4
+Author: Vinnie Monaco <contact@vmonaco.com>
+Date:   Fri Sep 17 15:01:55 2021 -0700
+
+    Merge branch 'master' of github.com:vmonaco/kloak into mouse
+
+commit aaf1de40cbe9679af908063b75da3e87081714e4
+Merge: 7fb3f9e 88477f6
+Author: Vinnie Monaco <vinmonaco@gmail.com>
+Date:   Fri Sep 17 15:01:42 2021 -0700
+
+    Merge pull request #36 from Whonix/master
+    
+    port packaging to Debian bullseye
+
+commit 59c47d88e4b579e93a85209484681f536035e8d6
+Author: Vinnie Monaco <contact@vmonaco.com>
+Date:   Mon Sep 13 14:34:16 2021 -0700
+
+    removed restrictions on event types
+
+commit 99d2af051dccbee7f2cd3f35fbc2d7ae64af00c7
+Author: Vinnie Monaco <contact@vmonaco.com>
+Date:   Mon Sep 13 11:51:38 2021 -0700
+
+    fixed typo
+
+commit 7b94b28e472cef7e3c52960986a3bc7dfa651f94
+Author: Vinnie Monaco <contact@vmonaco.com>
+Date:   Mon Sep 13 11:45:23 2021 -0700
+
+    started support for EV_REL events
+
+commit 88477f678878d2405b85839c8a9029dc0c9b697a
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Sun Sep 12 11:42:44 2021 -0400
+
+    bumped changelog version
+
+commit 28d3eef79cfe70828bfe1bbe44bfcf79c5f4c593
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Sat Sep 11 16:33:51 2021 -0400
+
+    readme
+
+commit e54394894a96c1a0f1cefd95676bcbd142c67add
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Sat Aug 28 13:54:16 2021 -0400
+
+    bumped changelog version
+
+commit 2b2413d5f97a03560c4f4c88600ce0010e65f8e2
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Thu Aug 5 16:47:52 2021 -0400
+
+    bumped changelog version
+
+commit 89254249098f7081ea3b029d6715f7c9882b9c1f
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Wed Aug 4 16:03:27 2021 -0400
+
+    lintian
+
+commit 53caa09682651e7a7de554d78acb24151ccb803e
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Wed Aug 4 16:01:50 2021 -0400
+
+    re-generated man pages
+
+commit b4cab3fcf728bca4783719eb2cd67b074e7ce6ba
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Tue Aug 3 11:47:33 2021 -0400
+
+    re-generate man pages (generated using "genmkfile manpages")
+
+commit b7d67c0eb8d2fcce495c9ce3213462d5562ba8f1
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Tue Aug 3 11:43:33 2021 -0400
+
+    man page
+
+commit 8169d9763e89e08bf80d56a8b59e6538b1a82f1a
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Tue Aug 3 05:48:22 2021 -0400
+
+    bullseye
+
+commit 6eaecb7cb1d5202544ef5b5ebb680b81084dfa7f
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Sun Aug 1 16:32:12 2021 -0400
+
+    bullseye
+
+commit f37f26053f42964f46a6bfc2f3c20908a11aeb08
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Sun Aug 1 16:24:33 2021 -0400
+
+    readme
+
+commit 40f31f7351ea32ae84e785c632285cda91203bf1
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Thu Mar 18 09:05:55 2021 -0400
+
+    bumped changelog version
+
+commit c04e59f03af45615b1a4390b5d14905677b51f3d
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Thu Mar 18 08:57:20 2021 -0400
+
+    copyright
+
+commit db11450344e2f6d51c078e720b8498ac2ccea611
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Thu Mar 18 07:44:35 2021 -0400
+
+    bumped changelog version
+
+commit a4c465baa95f865be0e7767fff232857a3aab757
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Thu Mar 18 07:39:48 2021 -0400
+
+    copyright
+
+commit 13314c1731b39842943d4084db2bb744f4a08414
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Wed Mar 17 11:36:32 2021 -0400
+
+    bumped changelog version
+
+commit 99e8876ea073604e396bcf102ed98a0c31427b70
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Wed Mar 17 09:45:16 2021 -0400
+
+    copyright
+
+commit 370a6d563cc64b7f81824fd5f884ebba37a0a9a3
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Sat Feb 6 06:30:56 2021 -0500
+
+    bumped changelog version
+
+commit 58588a837800c020ff6a380feb2bd14b683fdffe
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Sat Feb 6 06:27:53 2021 -0500
+
+    readme
+
+commit 509e5327827dac4f279541da1aee0b8d4b4ce3e6
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Dec 3 15:52:42 2020 -0500
+
+    bumped changelog version
+
+commit bf8ea6f9db66dbde2a9133dc69f5185e94b7067f
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Dec 3 11:21:18 2020 -0500
+
+    comment
+
+commit 7fb3f9e9885977cac856ded31d80f6c737780518
+Merge: e1eec9d 00c3495
+Author: Vinnie Monaco <vinmonaco@gmail.com>
+Date:   Thu Oct 8 13:32:15 2020 -0700
+
+    Merge pull request #32 from madaidan/apparmor
+    
+    Fix AppArmor and seccomp
+
+commit 3e61d1a6b5ac92ebbfbb8e55c5e85c79973e5bbc
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Oct 8 13:40:45 2020 -0400
+
+    bumped changelog version
+
+commit 7d02f04592f6f64fa9e472d7624c11645a5bf86b
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Oct 8 13:40:45 2020 -0400
+
+    readme
+
+commit 0f30fc2370f1406f979567cff60a3aee0e029d96
+Merge: 1a13e75 00c3495
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Oct 8 11:19:59 2020 -0400
+
+    Merge remote-tracking branch 'madaidan/apparmor'
+
+commit 00c3495ffaa9df609d164aa1f020cd1e5db225ab
+Author: madaidan <50278627+madaidan@users.noreply.github.com>
+Date:   Thu Oct 8 12:38:42 2020 +0000
+
+    Allow getrandom
+
+commit 6c260b638d8835dfe2cb09b7b54c65d8b35449ff
+Author: madaidan <50278627+madaidan@users.noreply.github.com>
+Date:   Thu Oct 8 12:37:58 2020 +0000
+
+    Allow access to more libraries
+
+commit e1eec9ded59a8012d5cc9520bf897380a256fcd2
+Merge: 6694368 bea5410
+Author: Vinnie Monaco <vinmonaco@gmail.com>
+Date:   Mon Sep 7 20:17:29 2020 -0700
+
+    Merge pull request #30 from itoffshore/alpine
+    
+    add service script note for hardened kernels
+
+commit bea5410a0a8f0b3bc8834a42c4c3322c6b8c6beb
+Author: Stuart Cardall <developer@it-offshore.co.uk>
+Date:   Mon Sep 7 12:00:54 2020 +0100
+
+    add service script note for hardened kernels
+    
+    * hardened kernels without CONFIG_USER_NS_UNPRIVILEGED fail to start
+      the kloak service if private namespaces are enabled.
+
+commit 6694368db2588d828687f0846221f94ccf03e3fa
+Merge: 652105d 1a13e75
+Author: Vinnie Monaco <vinmonaco@gmail.com>
+Date:   Sun Sep 6 20:16:05 2020 -0700
+
+    Merge pull request #29 from Whonix/master
+    
+    packaging improvements and fixes
+
+commit 1a13e7537bd87c46576fe79432855e4842cea255
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Aug 6 07:33:56 2020 -0400
+
+    bumped changelog version
+
+commit 9ededf2f727e93c7e91fa6988c841b140fce053f
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Aug 6 07:31:49 2020 -0400
+
+    add `pread64`
+    
+    Thanks to @haroonrafi / @pcrockett for the report!
+    
+    fixes https://github.com/vmonaco/kloak/issues/28
+
+commit 3abdb4faeca4f8af3449f7ca58b66e1e6c7fa7c6
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Apr 16 08:36:54 2020 -0400
+
+    bumped changelog version
+
+commit 0dc802c876b846151615f2076d258d29877c63d1
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Apr 15 14:05:33 2020 -0400
+
+    readme
+
+commit 94350cf07578c347a0ba054cc4314f6b054689f4
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sun Apr 5 14:05:55 2020 -0400
+
+    bumped changelog version
+
+commit fd25e68017becafc1d105d9f415d84425599a2d9
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sun Apr 5 14:02:47 2020 -0400
+
+    Architecture: amd64
+    
+    https://github.com/vmonaco/kloak/issues/24
+    https://github.com/vmonaco/kloak/issues/25
+    Actually building might be possible but cross building using qemu has issues.
+    https://github.com/vivier/qemu-m68k/issues/38
+    https://bugs.launchpad.net/qemu/+bug/1756519
+    https://bugs.launchpad.net/qemu/+bug/1793539
+    qemu:handle_cpu_signal received signal outside vCPU context @ pc=0x60269d8c
+    qemu:handle_cpu_signal received signal outside vCPU context @ pc=0x6000178c
+
+commit 7631d7d1bd24353f8a89738f7d80f966988f3c4b
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sun Apr 5 13:50:47 2020 -0400
+
+    bumped changelog version
+
+commit 6ca7fbde8147fa90a5c44764490140f54e58656e
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sun Apr 5 13:46:36 2020 -0400
+
+    fix packaging for build without genmkfile
+
+commit dfeff821d06ce32b6918ba9f3f97f5d9ec45dfe5
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sun Apr 5 13:27:10 2020 -0400
+
+    bumped changelog version
+
+commit e03b8897c0c666f9c77c8b9714889fff5f60a6cd
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sun Apr 5 13:09:26 2020 -0400
+
+    copyright
+
+commit 9fe1fdf798a434fcc49a16d7eaa36267232f7712
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sun Apr 5 13:08:44 2020 -0400
+
+    apparmor packaging fixes
+
+commit ed1b360678ebddf6d6732d812e54179a76649fc1
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sat Apr 4 16:40:52 2020 -0400
+
+    bumped changelog version
+
+commit a12f457d2c5b7b58ecb3e07e5e56023123baf954
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sat Apr 4 16:36:13 2020 -0400
+
+    actually can be build for arm64
+
+commit 01bae31488ae1c9b86a214c25c0c8f806a05255e
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Apr 2 07:51:28 2020 -0400
+
+    bumped changelog version
+
+commit 44eb700387831b6152141ff06e16b2eb426845f1
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Apr 2 07:22:38 2020 -0400
+
+    readme
+
+commit 652105d67527b3bb24c3b86f219724998f20d83a
+Merge: 54bef10 9733e77
+Author: Vinnie Monaco <vinmonaco@gmail.com>
+Date:   Wed Apr 1 15:51:08 2020 -0700
+
+    Merge pull request #26 from Whonix/master
+    
+    packaging and apparmor improvements
+
+commit 9733e77f2b3b551e209a8830dfb4d57b2f22f90a
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Apr 1 16:32:15 2020 -0400
+
+    add debian install file
+
+commit 56692cccff9a16766799ac6baf22702de8d958f5
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Apr 1 15:56:48 2020 -0400
+
+    add man pages (generated using "genmkfile manpages")
+
+commit 7093613c4723787d9e9c9a9dec4b5320a80c9a32
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Apr 1 10:48:40 2020 -0400
+
+    bumped changelog version
+
+commit 11db9d47895fb401a3ed97ea028ab25d53a6b76e
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Apr 1 09:19:55 2020 -0400
+
+    copyright
+
+commit 7121b5a21de24b9479d8df7e2b080154c8a82095
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Apr 1 09:15:14 2020 -0400
+
+    copyright
+
+commit a14a3938bb9adbadeff200a00e1d6bc07ecfc3ca
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Apr 1 08:49:57 2020 -0400
+
+    update copyright year
+
+commit aa7ca49556fdbae5f474c94caaa0d74b01be2b93
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Mon Jan 13 12:36:52 2020 -0500
+
+    bumped changelog version
+
+commit 84fca49dc259c68b9d1caa61f4d7cddb78fb6ba9
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Mon Jan 13 12:36:11 2020 -0500
+
+    apparmor
+
+commit 64d8f75748a5e7364584dab512003016475d7254
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Mon Jan 13 12:33:07 2020 -0500
+
+    bumped changelog version
+
+commit 081fa02799e60f8e33e39c858fe13853e01c2b5f
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Mon Jan 13 12:30:40 2020 -0500
+
+    apparmor allow ptrace
+    
+    https://forums.whonix.org/t/current-state-of-kloak/5605/19
+
+commit ad4288a320da42c74649dc352b8b93c55bfec9be
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Jan 1 07:22:03 2020 -0500
+
+    bumped changelog version
+
+commit 4381af2f3a1dabc07330751eca1369eeb3e40655
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Jan 1 07:14:38 2020 -0500
+
+    capability sys_ptrace,
+    
+    https://forums.whonix.org/t/current-state-of-kloak/5605/17
+
+commit 29b286926062f93cb222e355e1996093d6f682f4
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Jan 1 07:12:50 2020 -0500
+
+    remove trailing spaces
+
+commit a54eb9333552fefcb2a73310f8f832a046e25fa3
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Nov 28 03:16:13 2019 -0500
+
+    bumped changelog version
+
+commit 381c686d4d081bbf0547f5cf1e70df7f1ff095ca
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Nov 27 10:26:02 2019 -0500
+
+    for now "Architecture: amd64"
+    
+    https://github.com/vmonaco/kloak/issues/24#
+    
+    https://github.com/vmonaco/kloak/issues/25
+
+commit 076a61d3dc0b4daab4592637464077773cede43e
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Nov 27 10:25:46 2019 -0500
+
+    comment
+
+commit 7518394c3a3201e5b2138458ce6f01043908a084
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Nov 27 07:25:48 2019 -0500
+
+    remove make_clean_hook_pre
+    
+    since no longer required
+    
+    since upstream Makefile now supports `make clean`
+
+commit bd0a1bb25a8b8a4b26b8d10bb57372e4df951dac
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Nov 27 07:24:52 2019 -0500
+
+    cleanup
+
+commit 2fd3abd649eadc3797125d0bfbd50891454ba534
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Nov 27 07:24:04 2019 -0500
+
+    allow building without genmkfile
+    
+    using standard Debian tools
+    
+    such as `dpkg-buildpackage -b`
+
+commit a68357c55f7ea3923aa5ab0512a7b32f2f2646c1
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Nov 27 07:21:25 2019 -0500
+
+    add man pages
+    
+    created with ronn
+    
+    created from markdown templates in folder man/
+    
+    debian/eventcap.8
+    debian/kloak.8
+
+commit 86209ea950c75f9e35bc89549086c174143905e8
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Nov 27 07:20:15 2019 -0500
+
+    work towards support building without genmkfile
+
+commit 8413f9fa474e6551b7fe515941a6f1deae430867
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Tue Nov 26 08:16:49 2019 +0000
+
+    version_numbers_by_upstream=true
+
+commit 30869f354a1bd73ea75fd87a1673b949607fcdce
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Tue Nov 26 08:16:05 2019 +0000
+
+    make-helper-overrides.bsh -> debian/make-helper-overrides.bsh
+
+commit f19cee00fd8c0851d103309096c9063c20103bb9
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Sep 19 13:04:18 2019 +0000
+
+    bumped changelog version
+
+commit 2f472a8eacdd58bc49c0ac4ab505b095dc0ee320
+Merge: bccd504 54bef10
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Sep 19 07:50:06 2019 -0400
+
+    Merge remote-tracking branch 'vmonaco/master'
+
+commit 54bef108d45b9ca70b1ef5b0b8fa4142b7832d9b
+Merge: 6f709ff 90dedd6
+Author: Vinnie Monaco <vinmonaco@gmail.com>
+Date:   Wed Sep 18 09:30:12 2019 -0700
+
+    Merge pull request #22 from madaidan/fix-apparmor
+    
+    Allow certain signals needed to start/stop/restart kloak
+
+commit 90dedd6efe115a10612c06bd1e2b3aecba314132
+Author: madaidan <50278627+madaidan@users.noreply.github.com>
+Date:   Wed Sep 18 16:05:22 2019 +0000
+
+    Allow certain signals needed to start/stop/restart kloak
+
+commit 6f709ff7b8133a48701c90f713cfe21fcb529a27
+Merge: f5ba897 bccd504
+Author: Vinnie Monaco <vinmonaco@gmail.com>
+Date:   Tue Sep 17 09:04:38 2019 -0700
+
+    Merge pull request #20 from Whonix/master
+    
+    Apparmor Debian packaging integration
+
+commit bccd504ff2ebe558c3b2c3977f128b192b7bfcf2
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Tue Sep 17 14:15:24 2019 +0000
+
+    bumped changelog version
+
+commit 7abcaeeed0cf76a9fb6c585ce322de753b7a31db
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Tue Sep 17 07:35:47 2019 +0000
+
+    remove trailing spaces
+
+commit ed26f834cf781c9e0a7abec038b0cf650b64bc5a
+Merge: 6d29789 f5ba897
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Tue Sep 17 07:28:30 2019 +0000
+
+    Merge remote-tracking branch 'vmonaco/master'
+
+commit f5ba8977bd36dd5412b2649cfd0adc055676fcab
+Merge: 133804e a0d118b
+Author: Vinnie Monaco <vinmonaco@gmail.com>
+Date:   Mon Sep 16 16:19:14 2019 -0700
+
+    Merge pull request #18 from madaidan/systemd-sandbox
+    
+    Add systemd sandboxing
+
+commit 133804e65377023cb6adeada2d1d7688766ec067
+Merge: 1bada28 887ec7b
+Author: Vinnie Monaco <vinmonaco@gmail.com>
+Date:   Mon Sep 16 16:17:47 2019 -0700
+
+    Merge pull request #19 from madaidan/apparmor-profile
+    
+    Add AppArmor profile
+
+commit 887ec7bd89fd69c724c1350041cc65acd06ce044
+Author: madaidan <50278627+madaidan@users.noreply.github.com>
+Date:   Mon Sep 16 16:41:56 2019 +0000
+
+    Create usr.sbin.kloak
+
+commit 72ad9c9974b0fb85a8ee0ecc4aaee936e51e1699
+Author: madaidan <50278627+madaidan@users.noreply.github.com>
+Date:   Mon Sep 16 16:41:35 2019 +0000
+
+    Update usr.sbin.kloak
+
+commit 78793d1a3607055edbabc66db2c6f066a9a7ecc6
+Author: madaidan <50278627+madaidan@users.noreply.github.com>
+Date:   Sun Sep 15 21:10:37 2019 +0000
+
+    Add AppArmor profile
+
+commit a0d118b443d3d4c634ce47a5f37353f6a4661f47
+Author: madaidan <50278627+madaidan@users.noreply.github.com>
+Date:   Sat Sep 14 22:48:24 2019 +0000
+
+    Add systemd sandboxing
+
+commit 6d297899bb08f7338a9f77209d90becfbc71c3d7
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Sep 12 12:48:51 2019 +0000
+
+    bumped changelog version
+
+commit 0445e2779d5cf8ff2ae27320f2bb7e5ee6e6a069
+Merge: 5048819 1bada28
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Sep 12 12:17:17 2019 +0000
+
+    Merge remote-tracking branch 'vmonaco/master'
+
+commit 5048819fec985d11b1092b07c029e0b9092d7d8c
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Sep 12 12:15:38 2019 +0000
+
+    restore upstream README.md
+    
+    https://github.com/vmonaco/kloak/pull/14#issuecomment-530150750
+
+commit 99841155fbf2dcb27988816ea77c48fa661dfad0
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Sep 12 12:13:57 2019 +0000
+
+    readme
+
+commit 1bada28010607c95991723054b7e07612e56c6c9
+Author: Vinnie Monaco <contact@vmonaco.com>
+Date:   Tue Sep 10 16:05:21 2019 -0700
+
+    typo
+
+commit 91c2d90c7bac6b1231c400b6369836506438cc09
+Author: Vinnie Monaco <contact@vmonaco.com>
+Date:   Tue Sep 10 16:03:40 2019 -0700
+
+    updated readme
+
+commit 7827ac96b1297ee4624bafc476b6c779aa364ff5
+Merge: f47066f 2e6d22c
+Author: Vinnie Monaco <vinmonaco@gmail.com>
+Date:   Tue Sep 10 15:52:44 2019 -0700
+
+    Merge pull request #14 from Whonix/master
+    
+    Debian buster
+
+commit f47066fd0481917793ce21dd51cb84e44c411a3f
+Merge: ed7b0ae 3902e48
+Author: Vinnie Monaco <vinmonaco@gmail.com>
+Date:   Tue Sep 10 15:42:33 2019 -0700
+
+    Merge pull request #15 from adrelanos/patch-1
+    
+    implement make clean
+
+commit 2e6d22c6b4bd0de550a9a59cb5aa60d93989f73a
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Aug 28 12:45:59 2019 +0000
+
+    bumped changelog version
+
+commit 31c36bf46c83ecfdd583b5b8da708e7dde9840b6
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Aug 28 11:35:21 2019 +0000
+
+    use properly override_dh_installman
+
+commit c9b5e58a8f88325cb4e3fa5a6196bac93619c926
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Aug 1 11:56:03 2019 +0000
+
+    bumped changelog version
+
+commit 1204aad63e67368c9ebfae878baf52ba73d0f0a8
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Aug 1 11:13:39 2019 +0000
+
+    readme
+
+commit 37869817809e9af988d8859a0a48a4615e729b9f
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Jul 31 07:40:23 2019 +0000
+
+    bumped changelog version
+
+commit 5dd8323fbe28e75924e24556ee374be6bac15641
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Jul 31 03:07:06 2019 -0400
+
+    /var/run -> /run
+
+commit 3902e4867eabfbaa012f3fbde5eebcdf0ba7ff51
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Mon Jul 22 00:38:55 2019 +0000
+
+    implement make clean
+
+commit 9e1bd72f5bfc4a0dd3b8027ca7bf438e50e56e68
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sat Jun 8 11:25:54 2019 +0000
+
+    bumped changelog version
+
+commit f5ba837403b21be61699863086639cf75162ac7c
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sat Jun 8 00:05:33 2019 -0400
+
+    fix debian/watch lintian warning debian-watch-contains-dh_make-template
+
+commit 1508eeb156d875273a9a123e021748b1b78707b4
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Fri May 24 20:43:52 2019 +0000
+
+    bumped changelog version
+
+commit c11753a46ad2a744e2b8e88bba5259f93fa16775
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Fri May 24 12:29:06 2019 -0400
+
+    readme
+
+commit f4dabb0ad696d1aec2dd71d21fa8199bb618cb48
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sun May 12 10:43:25 2019 +0000
+
+    bumped changelog version
+
+commit c2054a4dc01f44a14cd95b9c78830bdf263d1b9f
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sun May 12 02:37:40 2019 -0400
+
+    comment
+
+commit 1f0639ac92cc22b2054aac2201acb02ac8a8f406
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sun May 12 02:34:26 2019 -0400
+
+    disable verbosity
+
+commit c27262d2834d9c43b31081129184d575174f1437
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Tue Apr 23 12:39:33 2019 +0000
+
+    bumped changelog version
+
+commit 17ad376711e10489c9c56d5927c52f29baa7ca12
+Merge: f1afa53 ed7b0ae
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Mon Apr 22 06:58:47 2019 -0400
+
+    Merge remote-tracking branch 'vmonaco/master'
+
+commit ed7b0ae41baab7170a76477dde6677cdb6fde76e
+Author: Vinnie Monaco <contact@vmonaco.com>
+Date:   Fri Apr 19 22:50:50 2019 +0000
+
+    Fixed keyboard freezing/repeating when system time decreases
+
+commit f1afa535fdfe1b6301a6561c3e15c2142b90347d
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Apr 11 12:19:07 2019 +0000
+
+    bumped changelog version
+
+commit 3b7250dc3bde53b2b87c2014b4004e0acd9972f5
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Apr 11 12:15:26 2019 +0000
+
+    -v for verbosity due to:
+    https://github.com/vmonaco/kloak/issues/13
+
+commit 9a0c0ced31550aeff58e62c6f421ef6fca8349b6
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Apr 4 14:19:34 2019 -0400
+
+    bumped changelog version
+
+commit 13d4c33ac4cb10f780934972edb8d133dd084365
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Apr 4 05:55:51 2019 -0400
+
+    port to debian buster
+
+commit e7445c678dcff11e72da51e695b74fddb17bbed5
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Apr 4 05:51:04 2019 -0400
+
+    port to debian buster
+
+commit 26e5dbf661e92b28dca2dfcbbadd28749fce588e
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Tue Apr 2 11:59:43 2019 +0000
+
+    bumped changelog version
+
+commit 840d9848d2c66d7860bc768fdee97150e8d66476
+Author: Vinnie Monaco <contact@vmonaco.com>
+Date:   Thu Mar 28 20:28:00 2019 +0000
+
+    Updated changelog
+
+commit 49ca7208f15b976b51df23666667f14c63a631d7
+Author: Vinnie Monaco <contact@vmonaco.com>
+Date:   Wed Mar 27 19:08:56 2019 +0000
+
+    Updated readme and docs
+
+commit 1b482f93350f2c4d3b5f613cc566dae1f7743552
+Author: Vinnie Monaco <contact@vmonaco.com>
+Date:   Thu Feb 28 12:53:46 2019 -0800
+
+    Formatting
+
+commit e8348b1eec42041d54640bf6c956458c54f9bd98
+Author: Vinnie Monaco <contact@vmonaco.com>
+Date:   Thu Feb 28 12:53:13 2019 -0800
+
+    Removed debugging code
+
+commit 942db81988ef8de2e820a4f3d1fc64bebfd9846c
+Author: Vinnie Monaco <contact@vmonaco.com>
+Date:   Thu Feb 28 11:30:37 2019 -0800
+
+    Fixed sleep location in main loop
+
+commit 97640be7d3c2cd6087e9948a45edeb783fc06e8d
+Author: Vinnie Monaco <contact@vmonaco.com>
+Date:   Thu Feb 28 11:28:27 2019 -0800
+
+    Moved current time capture
+
+commit 242eb57da65ba1d4c8d494baaeac315b2893be0e
+Author: Vinnie Monaco <contact@vmonaco.com>
+Date:   Wed Feb 27 16:59:01 2019 -0800
+
+    fixed output formatting
+
+commit 0302bc52f08d866d485788a5723daf050b94d0e2
+Author: Vinnie Monaco <contact@vmonaco.com>
+Date:   Wed Feb 27 16:50:46 2019 -0800
+
+    Added autodetect uinput, error checking
+
+commit 7f860ff02cf4e46324e619794461799a6529dfb8
+Author: Vinnie Monaco <contact@vmonaco.com>
+Date:   Wed Feb 27 14:56:48 2019 -0800
+
+    fixed keyboard autodetect
+
+commit 6963e326ef66e2e21af0311ff5a2323cd7d777cf
+Author: Vinnie Monaco <contact@vmonaco.com>
+Date:   Wed Feb 27 14:26:41 2019 -0800
+
+    removed options to kloak in service file
+
+commit 26479733905155868ff3ca19223ae405305ffc39
+Author: Vinnie Monaco <contact@vmonaco.com>
+Date:   Tue Feb 26 17:04:09 2019 -0800
+
+    Cleaned up main loop, started polling interval to quantize output times
+
+commit fab6f9c9d9b65d98236adbe764f2a5190ebd3238
+Author: Vinnie Monaco <contact@vmonaco.com>
+Date:   Tue Feb 26 16:02:40 2019 -0800
+
+    Cleaned up keycodes table
+
+commit f40484edb85409b8b05272719aeb8562d9de1467
+Author: Vinnie Monaco <contact@vmonaco.com>
+Date:   Tue Feb 26 15:57:19 2019 -0800
+
+    Added queue to buffer keyboard events, removed dependency on pthreads
+
+commit b9d531ec5c39e344ee46f6078b4be43cd0f4ccd7
+Author: Vinnie Monaco <contact@vmonaco.com>
+Date:   Tue Feb 26 13:33:47 2019 -0800
+
+    ignore case when detecting keyboard
+
+commit 9dcd78b57ec0509c38642eb2938c49c1976bfa3f
+Author: Vinnie Monaco <contact@vmonaco.com>
+Date:   Fri Feb 22 16:38:01 2019 -0800
+
+    Added auto detection of keyboard devices
+
+commit 43fcfdaf3ac0c71df2486db22eb758548eb1fda6
+Merge: abe14ab 4ee9fd3
+Author: Vinnie Monaco <vinmonaco@gmail.com>
+Date:   Fri Jan 20 12:41:46 2017 -0500
+
+    Merge pull request #9 from adrelanos/master
+    
+    Debian packaging fixes
+
+commit 4ee9fd3e36bbd2e4d4e4e8ec237ed2dbd7a1d339
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Fri Jan 20 17:17:51 2017 +0100
+
+    fix typo
+    
+    since lintian complained about it
+
+commit a00aa67ed61469b4f537b7254532c402f1b8b3ed
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Fri Jan 20 17:15:36 2017 +0100
+
+    bump Debian Standards-Version to 3.9.8 for Debian stretch comparability
+
+commit bf9edcaf545dded5c0f46af6012de542b9eb3412
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Fri Jan 20 17:12:17 2017 +0100
+
+    remove faketime from packaging (no longer required for reproducible builds)
+
+commit abe14abcd348f76566801524b5ba8ceb3d677c0c
+Merge: 778f2a0 23146cd
+Author: Vinnie Monaco <vinmonaco@gmail.com>
+Date:   Sun Jan 8 07:43:57 2017 -0500
+
+    Merge pull request #8 from dfgg12/patch-1
+    
+    fixing typo in readme
+
+commit 23146cdcdde0caff1e8012b87b87e8a3227436db
+Author: dfgg12 <damian@niom.pl>
+Date:   Sun Jan 8 11:21:46 2017 +0100
+
+    fixing typo in readme
+
+commit 778f2a0bd2b88fff8453b16829b7035002cd1864
+Merge: 241ac94 f4b400b
+Author: Vinnie Monaco <vinmonaco@gmail.com>
+Date:   Fri Jan 6 15:11:10 2017 -0500
+
+    Merge pull request #6 from adrelanos/make_clean-fix
+    
+    fix 'make clean'
+
+commit f4b400b570ea68b12f254d539ce9c80b87cae06b
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Fri Jan 6 20:01:20 2017 +0000
+
+    fix 'make clean'
+    
+    fixes the following issue
+    
+    make clean
+    /usr/share/genmkfile/makefile-full:83: warning: overriding recipe for target 'clean'
+    
+    https://github.com/vmonaco/kloak/issues/3
+    https://github.com/vmonaco/kloak/issues/5
+
+commit 241ac947ddb417cc8c03b02daf0572b486788875
+Author: Vinnie Monaco <vinmonaco@gmail.com>
+Date:   Fri Jan 6 14:51:09 2017 -0500
+
+    Cleaned up .gitignore
+
+commit c500b2e8fd8610847ffc36295e9f1f22b7dd50b9
+Merge: 63c5b6a 50b531f
+Author: Vinnie Monaco <vinmonaco@gmail.com>
+Date:   Fri Jan 6 14:37:07 2017 -0500
+
+    Merge branch 'adrelanos-debian'
+
+commit 63c5b6ad5b13cfdd3fcdd09d90bb2131d39666a1
+Author: Vinnie Monaco <vinmonaco@gmail.com>
+Date:   Fri Jan 6 14:35:04 2017 -0500
+
+    Fixed unalloced memory causing sigsev when compiled with -O2
+
+commit 50b531f62b03a7bb32f37640521580cfa9de84d0
+Merge: 0815f83 3613eb9
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Fri Jan 6 18:30:27 2017 +0000
+
+    Merge remote-tracking branch 'vmonaco/master' into debian
+
+commit 3613eb98601a6fbf749a0ae90a76a672cc8d8774
+Author: Vinnie Monaco <vinmonaco@gmail.com>
+Date:   Fri Jan 6 13:18:53 2017 -0500
+
+    Removed for loop inits
+
+commit aaeb28775404b0e0acb087b1e96ce6e2020c1348
+Author: Vinnie Monaco <vinmonaco@gmail.com>
+Date:   Fri Jan 6 13:11:35 2017 -0500
+
+    Removed uncommon keys from keycodes.c
+
+commit 0815f830ffae193b04cc68a50f2f499889c0c29f
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Fri Jan 6 18:03:46 2017 +0000
+
+    fix, readd flags for hardening, added `$(CPPFLAGS) $(CFLAGS) $(LDFLAGS)`
+
+commit ab75d19d5894c4413488d7b82c6752423226b8a3
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Fri Jan 6 18:37:41 2017 +0100
+
+    refactoring, just append Makefile, abandon Makefile_orig
+
+commit db8aa69d975664080da5fb8fcdb15129c5aee263
+Merge: 30bc816 f54c102
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Fri Jan 6 18:35:51 2017 +0100
+
+    Merge remote-tracking branch 'vmonaco/master' into debian
+    
+    Conflicts:
+            Makefile
+
+commit f54c10260d8f4e410007df52d0591909c3982179
+Author: Vinnie Monaco <vinmonaco@gmail.com>
+Date:   Thu Jan 5 17:04:07 2017 -0500
+
+    Updated readme
+
+commit 1e2da630c48804e29705709d388940db214fa5f5
+Author: Vinnie Monaco <vinmonaco@gmail.com>
+Date:   Thu Jan 5 11:56:52 2017 -0500
+
+    Cleaned up Makefile
+
+commit 8bab9fa2688f69ea4dcea061365405b0d24521dc
+Author: Vinnie Monaco <vinmonaco@gmail.com>
+Date:   Thu Jan 5 11:55:46 2017 -0500
+
+    Updated readme
+
+commit 77318c14f446fe14b2f0acd515c63b013a67ccaf
+Author: Vinnie Monaco <vinmonaco@gmail.com>
+Date:   Thu Jan 5 11:47:57 2017 -0500
+
+    Added option for rescue keys
+
+commit 312590df189269e93ae7e8fc387ba83be0cf4b0f
+Author: Vinnie Monaco <vinmonaco@gmail.com>
+Date:   Thu Jan 5 09:54:59 2017 -0500
+
+    Added keycodes lookup hdr and src
+
+commit 4e8b59dab6dec80a0446f0aa5b7faca4b05f984b
+Author: Vinnie Monaco <vinmonaco@gmail.com>
+Date:   Thu Jan 5 09:24:22 2017 -0500
+
+    Changed rescue keys to 'Left Shift + Right Shift + Esc'
+
+commit 30bc816ea69eb4fc79e4ebed514a5cccdb5f9e33
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Jan 4 20:24:21 2017 +0000
+
+    bumped changelog version
+
+commit 31a017ab0e70a3a3a77f13ab6b0adee79c758d1c
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Jan 4 20:24:04 2017 +0000
+
+    - initial Debian packaging
+    - depends on genmkfile, added genmkfile Makefile
+    - added systemd unit file for auto start before graphical and getty target
+    - for hardening, added `$(CPPFLAGS) $(CFLAGS) $(LDFLAGS)` to original makefile (renamed to Makefile_orig)
+    
+    RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      FILE
+    Full RELRO      Canary found      NX enabled    PIE enabled     No RPATH   No RUNPATH   /usr/sbin/kloak
+    
+    RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      FILE
+    Full RELRO      No canary found   NX enabled    PIE enabled     No RPATH   No RUNPATH   /usr/sbin/eventcap
+    
+    - added manpages for kloak and eventcap
+    - TODO: somehow auto detect /dev/input/... keyboard device for systemd unit file
+
+commit 24877bac8fdf856f1c7f72a34ff03d45ab872d5f
+Author: Vinnie Monaco <vinmonaco@gmail.com>
+Date:   Wed Dec 21 14:37:57 2016 -0500
+
+    Rename LICENSE.txt to LICENSE
+
+commit 521debce06e39083c282f13f165aeef8b081bd16
+Author: Vinnie Monaco <vinmonaco@gmail.com>
+Date:   Wed Dec 21 13:17:29 2016 -0500
+
+    Updated readme
+
+commit 28d5f0663fbef868856b7d58a238954ae09f94f5
+Author: Vinnie Monaco <vinmonaco@gmail.com>
+Date:   Wed Dec 21 12:59:23 2016 -0500
+
+    Initial commit

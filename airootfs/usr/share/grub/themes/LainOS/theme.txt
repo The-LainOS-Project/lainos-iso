@@ -1,0 +1,75 @@
+# Global Property
+title-text:     ""
+title-font:     "adler.pf2 18"
+title-color:    "#ffffff"
+desktop-image:  "background.jpg"
+desktop-color:  "#ffffff"
+message-font:   "adler.pf2 18"
+
+terminal-font:  "Fixed Regular 13"
+#terminal-font:  "Droid Sans Mono Regular 14"
+
+terminal-box:   "inbox_*.png"
+
+# Use this label as a title
++ label {
+    left  = 40%
+    top   = 8%
+    width = 100%
+    text  = "Welcome To LainOS!"
+    color = "#ffffff"
+    align = "left"
+    font  = "adler.pf2 18"
+}
+
+# Show the boot menu
++ boot_menu {
+    left        = 20%
+    top         = 20%
+    width       = 60%
+    height      = 42%
+    item_color                 = "#000000"
+    selected_item_color        = "#ffffff"
+    selected_item_pixmap_style = "select_*.png"
+
+    selected_item_font = "adler.pf2 14"
+    item_font          = "adler.pf2 14"
+    item_height        = 32
+    item_padding       = 0
+    item_spacing       = 0
+    icon_width         = 0
+    icon_height        = 0
+    icon_spacing       = 0
+}
+
+# Show informational messages below the boot menu
+# --using individual labels instead of a vbox
+
++ label {
+    left  = 30%
+    top   = 65%
+    width = 70%
+    text  = "Press 'e' to edit the selected entry"
+    color = "#ffffff"
+    align = "left"
+    font  = "DejaVu Sans Bold 14"
+}
+
+# Show a styled horizontal progress bar
++ progress_bar {
+    id              = "__timeout__"
+    left            = 22%
+    top             = 85%
+    width           = 60%
+    height          = 18
+    bg_color        = "201, 0, 22"
+    fg_color        = "255, 99,9"
+    border_color    = "255, 181, 21"
+    show_text       = true
+    text_color      = "#fafafa"
+    font            = "DejaVu Sans Regular 14"
+    #text            = "@TIMEOUT_NOTIFICATION_LONG@"
+    text            = "The highlighted entry will start in %d seconds"
+    bar_style       = "progress_bar_*.png"
+    highlight_style = "progress_highlight_*.png"
+}
