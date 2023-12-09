@@ -134,7 +134,7 @@ zsh
 
 #installation
 calamares
-archiso-calamares-config
+lainos-calamares-config
 xfce4
 sddm
 networkmanager
@@ -143,7 +143,7 @@ plymouth
 
 
 #desktop
-hyprland-git
+hyprland
 openbox
 hyprpicker
 wofi
