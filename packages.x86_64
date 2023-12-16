@@ -137,6 +137,7 @@ calamares
 lainos-calamares-config
 xfce4
 sddm
+dolphin
 networkmanager
 network-manager-applet
 plymouth
@@ -156,6 +157,7 @@ dunst
 eww-wayland
 swayidle
 swaylock-effects-git
+#swaylockd
 sway-audio-idle-inhibit-git
 bc
 pamixer
@@ -172,6 +174,7 @@ swappy
 nm-connection-editor
 dictd
 wl-clip-persist-git
+tlp
 
 #accessories
 chafa
@@ -184,6 +187,7 @@ sqlite
 xdg-ninja
 xdg-user-dirs
 yt-dlp
+tlp
 
 #android
 android-tools
@@ -353,6 +357,7 @@ variety
 volumeicon
 xorg-xbacklight
 xorg-xkill
+xorg-xkbcomp
 xorg-xrdb
 
 #arcolinux
