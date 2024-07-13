@@ -297,7 +297,8 @@ fd
 fzf
 htop
 man-db
-neofetch
+#neofetch
+neowofetch
 procs
 python-pywal
 ripgrep
