@@ -5,7 +5,7 @@ This ISO build installs all of the packages found in the LainOS Arch script(http
 
 Prerequisites: Have the LainOS repo (`git clone https://github.com/The-LainOS-Project/lainos_repo`) in a local repo and adjust `/airootfs/etc/pacman.conf` accordingly to use this repo.
 
-NEW NOTE: In order to build this ISO you must have the`lainos-calamares-config` package in your local repo.(it is too big for the binary to fit in GitHub without paying for repo space so you'll have to build the package yourself.) It can be found here: https://github.com/The-LainOS-Project/lainos-calamares-config
+NEW NOTE 13/06/2024: In order to build this ISO you must have the`lainos-calamares-config` package in your local repo.(it is too big for the binary to fit in GitHub without paying for repo space so you'll have to build the package yourself.) It can be found here: https://github.com/The-LainOS-Project/lainos-calamares-config
 
 To build the ISO, clone this repository, cd into it, and execute the following command:
 
