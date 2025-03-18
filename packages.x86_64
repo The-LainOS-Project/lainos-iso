@@ -273,7 +273,6 @@ libreoffice-fresh
 
 #privacy/security
 element-desktop
-firejail
 gufw
 gpa
 hblock
