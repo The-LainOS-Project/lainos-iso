@@ -123,6 +123,7 @@ vim
 virtualbox-guest-utils-nox
 vpnc
 wezterm-terminfo
+wireguard-tools
 wireless-regdb
 wireless_tools
 wpa_supplicant
