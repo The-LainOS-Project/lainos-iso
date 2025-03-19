@@ -18,4 +18,4 @@ The ISO will appear in `/home/USER/out/` and the `/home/USER/work/` folder can b
 
 After booting up the ISO, select Xfce session(Calamares only works in Xfce), then enter no password into the login prompt to enter the Xfce live installation environment.
 
-This ISO should be useable in the coming weeks.
+This ISO needs an updated calamares installer and hyprland config. It should be useable in the coming weeks.
