@@ -363,14 +363,14 @@ xorg-xkbcomp
 xorg-xrdb
 
 #arcolinux
-#xfce4-clipman-plugin
-#xfce4-power-manager
-#xfce4-screenshooter
-#xfce4-settings
-#xfce4-taskmanager
-#thunar
-#thunar-archive-plugin
-#thunar-volman
+xfce4-clipman-plugin
+xfce4-power-manager
+xfce4-screenshooter
+xfce4-settings
+xfce4-taskmanager
+thunar
+thunar-archive-plugin
+thunar-volman
 #arcolinux-openbox-themes-git
 #arcolinux-tint2-themes-git
 #arcolinux-pipemenus-git
