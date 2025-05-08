@@ -23,7 +23,7 @@ Resources:
 
 This ISO framework installs all of the packages found in the LainOS Arch Ricer script(https://codeberg.org/LainOS/LainOS-ricer-arch) using Calamares and leaves an installation with Hyprland and Openbox(Xfce is deleted during the installation). This ISO build precedes the final LainOS ISO build as some refinements may need to be included for completion.
 
-Prerequisites: Have the LainOS repo (`git clone https://github.com/The-LainOS-Project/lainos_repo`) in a local repo and adjust `/airootfs/etc/pacman.conf` accordingly to use this repo. (repo-add /home/user/local-repo.db.tar.gz *pkg.tar.zst)
+Prerequisites: Have the LainOS repo (`git clone https://github.com/The-LainOS-Project/lainos_repo`) in a local repo and adjust `/airootfs/etc/pacman.conf` accordingly to use this repo. (repo-add /home/user/local_repo.db.tar.gz *pkg.tar.zst)
 
 NEW NOTE 13/07/2024: In order to build this ISO you must have the`lainos-calamares-config` package in your local repo.(it is too big for the binary to fit in GitHub without paying for repo space so you'll have to store it in a local repo or just one it can be pulled from.) It can be found here: https://github.com/The-LainOS-Project/lainos-calamares-config
 
