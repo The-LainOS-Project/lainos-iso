@@ -1,0 +1,46 @@
+window {
+	font-size: 24px;
+	margin: 0px;
+	border: 0px solid #957FB8; /* extra border */
+	background-color: #1F1F28; /* only border visible */
+}
+
+#input {
+	margin: 5px;
+	border: none;
+	color: #DCD7BA;
+	background-color: #2A2A37;
+}
+
+#inner-box {
+	margin: 5px;
+	border: none;
+	background-color: #1F1F28;
+}
+
+#outer-box {
+	margin: 5px;
+	border: none;
+	background-color: #1F1F28; /* visible when blankspace */
+}
+
+#scroll {
+	margin: 0px;
+	border: none;
+}
+
+#text {
+	margin: 5px;
+	border: none;
+	color: #957FB8;
+}
+
+#entry:selected {
+	background-color: #363646;
+	background: linear-gradient(90deg, #363646, #2A2A37);
+}
+
+image {
+	margin-left: 0.5em;
+	margin-right: 0.5em;
+}

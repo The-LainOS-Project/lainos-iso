@@ -1,0 +1,81 @@
+[[colors.indexed_colors]]
+color = "#ffa066"
+index = 16
+
+[[colors.indexed_colors]]
+color = "#ff5d62"
+index = 17
+
+[colors.bright]
+black = "#454b56"
+blue = "#2980b9"
+cyan = "#27aeae"
+green = "#218058"
+magenta = "#8e44ad"
+red = "#c0392b"
+white = "#acada1"
+yellow = "#fdbc4b"
+
+[colors.normal]
+black = "#000515"
+blue = "#005f87"
+cyan = "#20786d"
+green = "#007900"
+magenta = "#8b09b1"
+red = "#d40000"
+white = "#dddce7"
+yellow = "#ff4500"
+
+[colors.primary]
+background = "#0a0b0e"
+foreground = "#dddce7"
+
+[colors.selection]
+background = "#1a1b1e"
+foreground = "#edecf7"
+
+[cursor]
+blink_interval = 750
+
+[cursor.style]
+blinking = "Always"
+shape = "Beam"
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 8.0
+
+[font.italic]
+family = "Victor Mono"
+style = "Italic"
+
+[font.normal]
+family = "Envy Code R"
+style = "Regular"
+
+[[keyboard.bindings]]
+action = "ToggleFullscreen"
+key = "F11"
+
+[[keyboard.bindings]]
+action = "SpawnNewInstance"
+key = "Return"
+mods = "Control|Shift"
+
+[scrolling]
+history = 50000
+
+[window]
+decorations = "none"
+opacity = 0.9
+startup_mode = "Maximized"
+
+[window.dimensions]
+columns = 90
+lines = 30
+
+[window.padding]
+x = 5
+y = 5

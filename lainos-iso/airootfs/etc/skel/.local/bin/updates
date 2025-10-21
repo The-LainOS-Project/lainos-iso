@@ -1,0 +1,38 @@
+#!/usr/bin/env sh
+
+# --------------------------------------------------------------------------------------------------
+#
+# Check for available updates.
+#
+# --------------------------------------------------------------------------------------------------
+
+threshhold_yellow=25
+threshhold_red=100
+
+if ! updates_arch=$(checkupdates 2>/dev/null | wc -l); then
+	updates_arch=0
+fi
+
+if ! updates_aur=$(paru -Qum 2>/dev/null | wc -l); then
+	updates_aur=0
+fi
+
+updates=$(("$updates_arch" + "$updates_aur"))
+
+if [ "$updates" -ge $threshhold_red ]; then
+	css_class="red"
+elif [ "$updates" -ge $threshhold_yellow ]; then
+	css_class="yellow"
+else
+	css_class="green"
+fi
+
+if [ "$updates" -eq 0 ]; then
+	# If there are no updates,
+	# there is no point on showing 0|0
+	text="0"
+else
+	text="$updates_arch|$updates_aur"
+fi
+
+printf '{"text": "%s", "alt": "%s", "tooltip": "%s updates", "class": "%s"}' "$text" "$updates" "$updates" "$css_class"

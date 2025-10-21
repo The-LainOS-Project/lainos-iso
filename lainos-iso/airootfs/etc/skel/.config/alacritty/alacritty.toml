@@ -1,0 +1,104 @@
+[env]
+TERM = "xterm-256color"
+
+[window]
+decorations = "none"
+opacity = 0.85
+startup_mode = "Maximized"
+
+[window.dimensions]
+columns = 90
+lines = 30
+
+# [window.padding]
+# x = 0
+# y = 0
+
+[scrolling]
+history = 50000
+
+# There are 2 ways of having the NerdFont glyphs
+#   1) Patching the font
+#   2) Adding the Symbols Nerd Font as a fallback font
+#       on $HOME/.config/fontconfig/fonts.conf file
+#
+# This config file uses the second method, so it's
+# recommended to install the "normal" fonts from the
+# Arch/AUR repositories and not patched fonts.
+# The Symbols Nerd Font used in LainOS includes
+# some extra linux-realted glyphs: https://cutt.ly/nwhpIEXj
+
+# If for some reason you want to use a different font
+# for the bold, italic, bold-italic styles uncomment
+# the lines below.
+# For instance: force Victor Mono Italic
+
+# Examples of fonts: Agave, Cascadia Code, Envy Code R,
+# Fira Code, Hack, IBM3270, Inconsolata, Iosevka,
+# Victor Mono
+
+[font]
+size = 11.0
+
+[font.italic]
+family = "Fira Code"
+style = "Italic"
+
+[font.normal]
+family = "Fira Code"
+style = "Regular"
+
+# Kanagawa Alacritty colors
+
+[colors.primary]
+background = "#1f1f28"
+foreground = "#dcd7ba"
+
+[colors.normal]
+black = "#090618"
+blue = "#7e9cd8"
+cyan = "#6a9589"
+green = "#76946a"
+magenta = "#957fb8"
+red = "#c34043"
+white = "#c8c093"
+# yellow = "#c0a36e"
+yellow = "#ffa066"
+
+[colors.bright]
+black = "#727169"
+blue = "#7fb4ca"
+cyan = "#7aa89f"
+green = "#98bb6c"
+magenta = "#938aa9"
+red = "#e82424"
+white = "#dcd7ba"
+yellow = "#e6c384"
+
+[colors.selection]
+background = "#2d4f67"
+foreground = "#c8c093"
+
+[[colors.indexed_colors]]
+color = "#ffa066"
+index = 16
+
+[[colors.indexed_colors]]
+color = "#ff5d62"
+index = 17
+
+[cursor]
+blink_interval = 750
+
+[cursor.style]
+blinking = "Always"
+shape = "Beam"
+
+[[keyboard.bindings]]
+action = "ToggleFullscreen"
+key = "F11"
+
+[[keyboard.bindings]]
+action = "SpawnNewInstance"
+key = "Return"
+mods = "Control|Shift"

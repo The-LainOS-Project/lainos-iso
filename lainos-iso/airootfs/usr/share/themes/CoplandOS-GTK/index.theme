@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=CoplandOS-GTK
+Comment=CoplandOS theme for GTK applications on LainOS
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+GtkTheme=CoplandOS-GTK
+MetacityTheme=CoplandOS-GTK
+IconTheme=Kora
+CursorTheme=starlabs-cursor-theme
+ButtonLayout=close,minimize,maximize:menu

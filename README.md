@@ -15,24 +15,28 @@
   <img align="top" src="https://img.shields.io/badge/Lain%20OS%20web-3d3b93?style=for-the-badge&logo=Devbox" alt="Web">
 </a>
 
-# LainOS-iso
-LainOS ISO framework based on Arch-ISO (calamares included)
+# LainOS ISO Framework based on ArchISO (Calamares included)
 
-Resources:
- Calamares installer for LainOS ISO build.
+Resources: Calamares installer for LainOS ISO build.
 
-This ISO framework installs all of the packages found in the LainOS Arch Ricer script(https://codeberg.org/LainOS/LainOS-ricer-arch) using Calamares and leaves an installation with Hyprland and Openbox(Xfce is deleted during the installation). This ISO build precedes the final LainOS ISO build as some refinements may need to be included for completion.
+This ISO framework installs all of the packages found in the LainOS Arch Ricer script(<https://codeberg.org/LainOS/LainOS-ricer-arch>) using Calamares and leaves an installation with Hyprland and Openbox. This ISO build precedes the final LainOS ISO build as some refinements may need to be included for completion.
 
-Prerequisites: Have the LainOS repo (`git clone https://github.com/The-LainOS-Project/lainos_repo`) in a local repo and adjust `/airootfs/etc/pacman.conf` accordingly to use this repo. (`repo-add /home/user/local_repo.db.tar.gz *pkg.tar.zst`)
+Prerequisites: Have the LainOS repo (git clone <https://gitlab.com/lainos/lainos_repo>) in a local repo and adjust /airootfs/etc/pacman.conf accordingly to use this repo. (repo-add /home/user/local_repo.db.tar.gz *pkg.tar.zst)
 
-NEW NOTE 13/07/2024: In order to build this ISO you must have the`lainos-calamares-config` package in your local repo.(it is too big for the binary to fit in GitHub without paying for repo space so you'll have to store it in a local repo or just one it can be pulled from.) It can be found here: https://github.com/The-LainOS-Project/lainos-calamares-config
+NEW NOTE 13/07/2024: In order to build this ISO you must have the lainos-calamares-config package in your local repo.(it is too big for the binary to fit in GitHub without paying for repo space so you'll have to store it in a local repo or just one it can be pulled from.) It can be found here: <https://gitlab.com/lainos/lainos-calamares-config>
 
-To build the ISO, clone this repository, cd into it, and execute the following command:
+To build the ISO, clone this repository, cd into it, and execute the following commands:
 
-`sudo mkarchiso -v -w /home/USER/work -o /home/USER/out /home/USER/lainos-iso/`
+sudo mkarchiso -v -w /home/USER/work -o /home/USER/out /home/USER/lainos-iso-beta/
 
-The ISO will appear in `/home/USER/out/` and the `/home/USER/work/` folder can be deleted.
+The ISO will appear in /home/USER/out/ and the /home/USER/work/ folder can be deleted.
 
-After booting up the ISO, select Xfce session(Calamares only works in Xfce), then enter no password into the login prompt to enter the Xfce live installation environment.
+After booting up the ISO, select Openbox session(Calamares only works in Openbox), then enter liveuser for the user, and no password into the login prompt to enter the Openbox live installation environment.
 
-This ISO needs an updated calamares installer and hyprland config. It should be useable in the coming weeks.
+Connect to the internet. If you are not connected to internet, the installer will show an error message. Ignore this, or connect and restart the LainOS Installer if it bothers you, just make sure you are connected before installing.
+
+The system is nice to use now and daily driveable.
+
+Post installation:
+
+Issue the command `sudo pacman -Syyu` to update the repo databases along with LainOS. 

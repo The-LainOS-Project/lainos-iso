@@ -1,0 +1,14 @@
+configuration {
+  modes: "window,run,drun,calc"; // ssh,combi
+  //display-drun: "Applications:";
+  //display-window: "Windows:";
+  drun-display-format: "{icon} {name}";
+  show-icons: true;
+  icon-theme: "breeze-dark";
+  lines: 10;
+  fake-transparency: true;
+  sidebar-mode: true;
+}
+
+@theme "/usr/share/rofi/themes/squared-kanagawa.rasi"
+//@theme "/usr/share/rofi/themes/squared-midnight.rasi"

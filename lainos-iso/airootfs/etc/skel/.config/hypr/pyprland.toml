@@ -1,0 +1,26 @@
+[pyprland]
+plugins = ["scratchpads", "magnify"]
+
+[scratchpads.term]
+command = "alacritty --class scratchpad"
+animation = "fromLeft"
+size = "85% 85%"
+margin = 150
+
+[scratchpads.updates]
+command = "alacritty --class scratchpad -e ~/.local/bin/update_prompt"
+animation = "fromBottom"
+size = "85% 85%"
+margin = 80
+
+[scratchpads.btop]
+command = "alacritty --class scratchpad -e btop"
+animation = "fromTop"
+size = "85% 85%"
+margin = 80
+
+[scratchpads.home-server]
+command = "alacritty --class scratchpad -e ssh home-server"
+animation = "fromRight"
+size = "85% 85%"
+margin = 150

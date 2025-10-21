@@ -1,0 +1,163 @@
+# -------------------------------------------------------------------------------------------------
+#   ____          _                          _ _
+#  / ___|   _ ___| |_ ___  _ __ ___     __ _| (_) __ _ ___  ___  ___
+# | |  | | | / __| __/ _ \| '_ ` _ \   / _` | | |/ _` / __|/ _ \/ __|
+# | |__| |_| \__ \ || (_) | | | | | | | (_| | | | (_| \__ \  __/\__ \
+#  \____\__,_|___/\__\___/|_| |_| |_|  \__,_|_|_|\__,_|___/\___||___/
+#
+#                  _    __                  _   _
+#   __ _ _ __   __| |  / _|_   _ _ __   ___| |_(_) ___  _ __  ___
+#  / _` | '_ \ / _` | | |_| | | | '_ \ / __| __| |/ _ \| '_ \/ __|
+# | (_| | | | | (_| | |  _| |_| | | | | (__| |_| | (_) | | | \__ \
+#  \__,_|_| |_|\__,_| |_|  \__,_|_| |_|\___|\__|_|\___/|_| |_|___/
+#
+# -------------------------------------------------------------------------------------------------
+
+#       _ _
+#  __ _| (_)__ _ ___ ___ ___
+# / _` | | / _` (_-</ -_|_-<
+# \__,_|_|_\__,_/__/\___/__/
+#
+# In order to be able to use the declared aliases inside the declared functions
+# the aliases MUST be declared before the function, so declare functions after aliases.
+alias bench='wget -qO- bench.sh | bash'
+#[ -f "/usr/local/bin/lolcat" ] || [ -f "/usr/bin/lolcat" ] && alias cat='lolcat'
+
+alias c='clear'
+alias cn='c; n'
+alias cu='c; u'
+alias cun='c; u; n'
+alias cum='cun'
+alias cl='c; pwd; ls'
+alias cls='c; pwd; ls'
+alias clt='c; lt'
+alias clat='c; lta'
+alias clta='c; lta'
+alias cll='c; pwd; ll'
+alias cla='c; pwd; la'
+alias clal='c; pwd; lla'
+alias clla='c; pwd; lla'
+
+alias duf='duf --hide-fs squashfs' # Exclude snaps
+alias e='extract' # extract from oh my zsh
+alias et='exiftool'
+[ -x "$(command -v fastfetch)" ] && alias f='fastfetch'
+alias h='history'
+alias hg='h | grep'
+alias hgi='h | grep -i'
+# conditional piping, if lolcat exists rainbownize the output, otherwise just print it as is
+alias llc="( [ -x \"$(command -v lolcat)\" ] && lolcat || awk '{print $0}' )"
+alias lg='lazygit'
+
+alias l='ls'
+if [ -x "$(command -v eza)" ]; then
+	alias ls='eza --icons --group-directories-first'
+	alias la='ls --all'
+	alias ll='ls --long --grid --time-style=long-iso'
+	alias lla='ls --all --long --grid --time-style=long-iso'
+	alias lt='pwd; ls --tree'
+	alias lat='pwd; ls --tree --all'
+	alias lta='lat'
+fi
+
+[ -x "$(command -v bat)" ] && alias less='bat'
+alias md='mkdir -p'
+alias mkdir='mkdir -p -v'
+alias myip="echo $(ip a | grep 192.168.1. | awk '{print $2}' | rev | cut -c 4- | rev) | llc"
+alias ms='mpv --shuffle' # For playlists
+alias n='neofetch'
+[ -x "$(command -v fastfetch)" ] && alias neofetch='fastfetch'
+alias nano='v'
+alias o='xdg-open'
+alias of='onefetch'
+alias p3='python3'
+alias p3s="ls; echo; echo Serving HTTP on $(myip):8000 | llc && p3 -m http.server"
+alias rc='rclone'
+alias rs='rsync -rauLPv --human-readable'
+alias sel='ani-cli Serial Experiments Lain'
+[ ! -x "$(command -v tree)" ] && alias tree='lt'
+alias u='sudo pacman -Syu --noconfirm'
+alias U='paru -Syu --noconfirm; flatpak update -y; kudasai snap refresh'
+alias un='u; echo; n'
+alias um='un'
+alias usb='ls /dev/tty*; lsusb'
+alias ut='uptime | llc'
+alias v='nvim-lazy' # See $HOME/.config/nvim/switcher.conf file
+alias v.='nvim-lazy .'
+alias vm='nvim-lazy main.c'
+alias wcl='wc -l | figlet | llc'
+alias wt='curl wttr.in'
+alias x='chmod +x'
+
+# Rainbow-nizing output
+if [ -x "$(command -v lolcat)" ]; then
+	alias cat='lolcat'
+	alias lc='lolcat'
+	alias pwd='pwd | lolcat'
+	he() { head "$@" | lolcat ; }
+	ta() { tail "$@" | lolcat ; }
+fi
+
+alias ..='cd ..;pwd'
+# Create aliases to move n levels up via loop.
+for i in {1..9}; do
+	dots=$(printf "%.0s../" $(seq 1 $i))
+	alias ".$i"="cd $dots;pwd"
+done
+
+#   __              _   _
+#  / _|_  _ _ _  __| |_(_)___ _ _  ___
+# |  _| || | ' \/ _|  _| / _ \ ' \(_-<
+# |_|  \_,_|_||_\__|\__|_\___/_||_/__/
+
+bk() { # Backup file
+	cp -v "$1" "$1".bak
+}
+cf() { # Count files containing a given string like an extension in the name
+	[ $# -eq 1 ] && find . | grep -c "$1" | figlet | llc
+	[ $# -eq 2 ] && find "$2" | grep -c "$1" | figlet | llc
+}
+chmod_dir() { # Change files and directories permissions recursively to standard values
+	# Made by:  @simonewebdesign, https://gist.github.com/simonewebdesign/4663701
+	find "$1" -type f -print0 | xargs -0 chmod -v 664 # files
+	find "$1" -type d -print0 | xargs -0 chmod -v 775 # directory
+}
+du_largest_files() { # List biggest n files, default n=10
+	[ -z "$1" ] && n=10 || n="$1"
+	du -h -x -s -- * | sort -r -h | head -"$n" | llc
+}
+# Decrypt tarball
+dtg() { # myarchive.tar.gz.gpg
+	gpg -d "$1" | tar xzvf -
+}
+dtx() { # myarchive.tar.xz.gpg
+	gpg -d "$1" | tar xJvf -
+}
+# Encrypt tarball
+etg() { # myarchive.tar.gz.gpg
+	tar czvpf - "$1" | gpg --symmetric --cipher-algo AES256 -o "$2"
+}
+etx() { # myarchive.tar.xz.gpg
+	tar cJvpf - "$1" | gpg --symmetric --cipher-algo AES256 -o "$2"
+}
+lsg() { # Filter ls output using grep
+	[ $# -eq 1 ] && ls --all | grep "$1"
+	[ $# -eq 2 ] && ls --all "$2" | grep "$1"
+}
+lsgi() { # Filter ls output using grep ignoring case
+	[ $# -eq 1 ] && ls --all | grep -i "$1"
+	[ $# -eq 2 ] && ls --all "$2" | grep -i "$1"
+}
+muc() { # Most n used commads, default n=10
+	[ -z "$1" ] && n=10 || n="$1"
+	history | awk 'BEGIN {FS="[ \t]+|\\|"} {print $3}' | sort | uniq -c | sort -nr | head -n "$n" | llc
+}
+ols() { # Open last screenshot
+	cd $HOME/Pictures/Screenshots/
+	last_scr="$(find . -type f -name \*.png -printf "%T@ %p\0" | 
+		awk 'BEGIN {RS="\0";} {if (NR==1){minmtime=$1; $1=""; lastmodified=$0;} else \
+		if (minmtime<$1){minmtime=$1; $1=""; lastmodified=$0;}} END{print substr(lastmodified,4)}')"
+	echo "Opening $last_scr" | llc
+	xdg-open $last_scr &
+	cd -
+}

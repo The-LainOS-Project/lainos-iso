@@ -1,0 +1,46 @@
+#!/bin/bash
+
+# --------------------------------------------------------------------------------------------------
+#
+# Prompt to update official/AUR packages.
+#
+# --------------------------------------------------------------------------------------------------
+
+echo "-------------------------" | lolcat
+echo "󰚰  Checking for updates" | lolcat
+echo "-------------------------" | lolcat
+echo
+
+if ! updates_arch=$(checkupdates 2>/dev/null | wc -l); then
+	updates_arch=0
+fi
+if ! updates_aur=$(paru -Qum 2>/dev/null | wc -l); then
+	updates_aur=0
+fi
+updates=$(("$updates_arch" + "$updates_aur"))
+
+if [ "$updates" -gt 0 ]; then
+
+	echo "-> 󰮯  Official packages:" | lolcat
+	echo
+	checkupdates 2>/dev/null
+	echo
+	echo "->   AUR packages:" | lolcat
+	echo
+	paru -Qum 2>/dev/null
+	echo
+	echo "-> $updates updates available"
+	echo
+else
+	notify-send "-> No updates available"
+	exit 0
+fi
+
+read -p "Update packages? [y/N] : " -n 1 -r
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+	echo
+	paru -Syu --noconfirm
+	notify-send "Update completed"
+else
+	exit 0
+fi
