@@ -37,9 +37,7 @@ After booting up the ISO, select Openbox session(Calamares installer only works 
 
 Connect to the internet. If you are not connected to internet, the installer will show an error message. Connect and restart the LainOS Installer, just make sure you are connected before installing.
 
-The system is nice to use now and daily driv
-
-LainOS ISO framework based on ArchISO (Calamares included)able.
+The system is nice to use now and daily drivable.
 
 Post installation:
 
