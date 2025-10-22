@@ -21,7 +21,7 @@ Resources: Calamares installer for LainOS ISO build.
 
 This ISO framework installs all of the packages found in the LainOS Arch Ricer script(<https://codeberg.org/LainOS/LainOS-ricer-arch>) using Calamares and leaves an installation with Hyprland and Openbox. This ISO build precedes the final LainOS ISO build as some refinements may need to be included for completion.
 
-Prerequisites: Have the LainOS repo (git clone <https://gitlab.com/lainos/lainos_repo>) in a local repo and adjust /airootfs/etc/pacman.conf accordingly to use this repo. (repo-add /home/user/local_repo.db.tar.gz *pkg.tar.zst)
+Prerequisites: You need to build the `lainos-calamares-config`(instructions below) and include it in the included `local_repo` and adjust `lainos-iso/lainos-iso/airootfs/etc/pacman.conf` accordingly to use this repo. (use the command `repo-add /home/user/local_repo.db.tar.gz *pkg.tar.zst` to link the repo etc.)
 
 NEW NOTE 13/07/2024: In order to build this ISO you must have the lainos-calamares-config package in your local repo.(it is too big for the binary to fit in GitHub without paying for repo space so you'll have to store it in a local repo or just one it can be pulled from.) It can be found here: <https://gitlab.com/lainos/lainos-calamares-config>
 
@@ -31,12 +31,15 @@ sudo mkarchiso -v -w /home/USER/work -o /home/USER/out /home/USER/lainos-iso-bet
 
 The ISO will appear in /home/USER/out/ and the /home/USER/work/ folder can be deleted.
 
-After booting up the ISO, select Openbox session(Calamares only works in Openbox), then enter liveuser for the user, and no password into the login prompt to enter the Openbox live installation environment.
+Use a tool like Balena Etcher to write the iso to a USB drive.
 
-Connect to the internet. If you are not connected to internet, the installer will show an error message. Ignore this, or connect and restart the LainOS Installer if it bothers you, just make sure you are connected before installing.
+After booting up the ISO, select Openbox session(Calamares installer only works in Openbox), then enter liveuser for the user, and no password into the login prompt to enter the Openbox live installation environment.
+
+Connect to the internet. If you are not connected to internet, the installer will show an error message. Connect and restart the LainOS Installer, just make sure you are connected before installing.
 
 The system is nice to use now and daily driveable.
 
 Post installation:
 
 Issue the command `sudo pacman -Syyu` to update the repo databases along with LainOS. 
+Issue the command `nano` to start LazyVim, let it update, then press Shift + U to force more updates, Exit LazyVim as you would vim.
