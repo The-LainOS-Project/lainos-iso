@@ -21,13 +21,13 @@ Resources: Calamares installer for LainOS ISO build.
 
 This ISO framework installs all of the packages found in the LainOS Arch Ricer script(<https://codeberg.org/LainOS/LainOS-ricer-arch>) using Calamares and leaves an installation with Hyprland and Openbox. This ISO build precedes the final LainOS ISO build as some refinements may need to be included for completion.
 
-Prerequisites: You need to build the `lainos-calamares-config`(instructions below) and include it in the included `local_repo` and adjust `lainos-iso/lainos-iso/airootfs/etc/pacman.conf` accordingly to use this repo. (use the command `repo-add /home/user/local_repo.db.tar.gz *pkg.tar.zst` to link the repo etc.)
+Prerequisites: You need to build the `lainos-calamares-config`(instructions below) and include it in the included `local_repo`(copy this repo to your home folder) and adjust `lainos-iso/lainos-iso/airootfs/etc/pacman.conf` accordingly to use this repo. (use the command `repo-add /home/user/local_repo.db.tar.gz *pkg.tar.zst` to link the repo etc.)
 
 NEW NOTE 13/07/2024: In order to build this ISO you must have the lainos-calamares-config package in your local repo.(it is too big for the binary to fit in GitHub without paying for repo space so you'll have to store it in a local repo or just one it can be pulled from.) It can be found here: <https://gitlab.com/lainos/lainos-calamares-config>
 
-To build the ISO, clone this repository, cd into it, and execute the following commands:
+To build the ISO, clone this repository, cd into it,and execute the following commands:
 
-sudo mkarchiso -v -w /home/USER/work -o /home/USER/out /home/USER/lainos-iso-beta/
+sudo mkarchiso -v -w /home/USER/work -o /home/USER/out /home/USER/lainos-iso/lainos-iso
 
 The ISO will appear in /home/USER/out/ and the /home/USER/work/ folder can be deleted.
 
