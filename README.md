@@ -25,9 +25,9 @@ Prerequisites: You need to build the `lainos-calamares-config`(instructions belo
 
 NEW NOTE 13/07/2024: In order to build this ISO you must have the lainos-calamares-config package in your local repo.(it is too big for the binary to fit in GitHub without paying for repo space so you'll have to store it in a local repo or just one it can be pulled from.) It can be found here: <https://gitlab.com/lainos/lainos-calamares-config>
 
-To build the ISO, clone this repository, cd into it,and execute the following commands:
+To build the ISO, clone this repository, cd into it,and execute the following command:
 
-sudo mkarchiso -v -w /home/USER/work -o /home/USER/out /home/USER/lainos-iso/lainos-iso
+`sudo mkarchiso -v -w /home/USER/work -o /home/USER/out /home/USER/lainos-iso/lainos-iso`
 
 The ISO will appear in /home/USER/out/ and the /home/USER/work/ folder can be deleted.
 
@@ -37,7 +37,9 @@ After booting up the ISO, select Openbox session(Calamares installer only works 
 
 Connect to the internet. If you are not connected to internet, the installer will show an error message. Connect and restart the LainOS Installer, just make sure you are connected before installing.
 
-The system is nice to use now and daily driveable.
+The system is nice to use now and daily driv
+
+LainOS ISO framework based on ArchISO (Calamares included)able.
 
 Post installation:
 
