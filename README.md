@@ -25,11 +25,11 @@ Prerequisites: You need to build the `lainos-calamares-config`(instructions belo
 
 NEW NOTE 13/07/2024: In order to build this ISO you must have the lainos-calamares-config package in your local repo.(it is too big for the binary to fit in GitHub without paying for repo space so you'll have to store it in a local repo or just one it can be pulled from.) It can be found here: <https://gitlab.com/lainos/lainos-calamares-config>
 
-To build the ISO, clone this repository, cd into it,and execute the following command:
+To build the ISO, clone this repository, cd into it,and execute the following commands:
 
 `sudo mkarchiso -v -w /home/USER/work -o /home/USER/out /home/USER/lainos-iso/lainos-iso`
 
-The ISO will appear in /home/USER/out/ and the /home/USER/work/ folder can be deleted.
+The ISO will appear in `/home/USER/out/` and the `/home/USER/work/` folder can be deleted.
 
 Use a tool like Balena Etcher to write the iso to a USB drive.
 
