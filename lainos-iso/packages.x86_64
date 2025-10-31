@@ -222,7 +222,6 @@ gvfs-smb
 ##Network
 avahi
 nss-mdns
-#openresolv
 ufw
 snowflake-client
 torsocks
@@ -307,14 +306,16 @@ nmap
 #wifite
 #metasploit
 #hashcat
+#routersploit
+
 
 ##internet
 librewolf
 
 ##Communication
 profanity
-discord
-element-desktop
+#discord
+#element-desktop
 #telegram-desktop
 thunderbird
 
@@ -394,13 +395,11 @@ dconf-editor
 gmrun
 gsimplecal
 #gtk2-perl
-gtk-engine-murrine
+#gtk-engine-murrine
 imagemagick
 lxappearance
 lxappearance-obconf
 lxrandr
-nitrogen
-#obmenu-generator
 picom
 playerctl
 rofi
